@@ -1,0 +1,95 @@
+[gd_scene load_steps=3 format=3 uid="uid://bogm8c0tdvk4x"]
+
+[ext_resource type="Script" path="res://manipulator/manipulator.gd" id="1_fsyb1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_826xl"]
+size = Vector3(0.05, 0.1, 0.05)
+
+[node name="Manipulator" type="Path3D"]
+script = ExtResource("1_fsyb1")
+vibration_start = 0.02
+
+[node name="Handle" type="PathFollow3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999969, 0, 0, 0, 0.999969, 0, 0, 0)
+progress = 0.334125
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Handle"]
+mesh = SubResource("BoxMesh_826xl")
+
+[node name="Marker" type="PathFollow3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.499999, 0, 0, 0, 0.499999, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Marker"]
+mesh = SubResource("BoxMesh_826xl")
+
+[node name="Marker2" type="PathFollow3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.499999, 0, 0, 0, 0.499999, 0, 0, 0)
+progress = 0.349869
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Marker2"]
+mesh = SubResource("BoxMesh_826xl")
+
+[node name="Marker3" type="PathFollow3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+progress = 0.699739
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Marker3"]
+mesh = SubResource("BoxMesh_826xl")
+
+[node name="Marker4" type="PathFollow3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+progress = 1.04961
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Marker4"]
+mesh = SubResource("BoxMesh_826xl")
+
+[node name="Marker5" type="PathFollow3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+progress = 1.39948
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Marker5"]
+mesh = SubResource("BoxMesh_826xl")
+
+[node name="Marker6" type="PathFollow3D" parent="."]
+transform = Transform3D(3.7749e-08, 0.0187309, -0.499649, 0, 0.499649, 0.0187309, 0.5, -1.41414e-09, 3.77224e-08, 0, 0, 0)
+progress = 1.74935
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Marker6"]
+mesh = SubResource("BoxMesh_826xl")
+
+[node name="Marker7" type="PathFollow3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+progress = 2.09922
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Marker7"]
+mesh = SubResource("BoxMesh_826xl")
+
+[node name="Marker8" type="PathFollow3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+progress = 2.44909
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Marker8"]
+mesh = SubResource("BoxMesh_826xl")
+
+[node name="Marker9" type="PathFollow3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+progress = 2.79896
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Marker9"]
+mesh = SubResource("BoxMesh_826xl")
+
+[node name="Marker10" type="PathFollow3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+progress = 3.14883
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Marker10"]
+mesh = SubResource("BoxMesh_826xl")
+
+[node name="Marker11" type="PathFollow3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+progress = 3.40185
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Marker11"]
+mesh = SubResource("BoxMesh_826xl")
+
+[connection signal="curve_changed" from="." to="." method="_on_curve_changed"]

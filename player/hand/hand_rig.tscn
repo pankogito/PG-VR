@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://djltobvcddlom"]
+
+[ext_resource type="PackedScene" uid="uid://0vx2tofori7g" path="res://player/hand/hand.fbx" id="1_57n0t"]
+[ext_resource type="Material" uid="uid://cbgin42f7hath" path="res://player/hand/hand.tres" id="2_q1k8s"]
+
+[node name="hand" instance=ExtResource("1_57n0t")]
+
+[node name="Hand" parent="HandRig/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_q1k8s")

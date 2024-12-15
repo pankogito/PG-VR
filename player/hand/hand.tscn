@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdw46gq7ee6oo"]
+
+[ext_resource type="Script" path="res://player/hand/hand.gd" id="1_ftdcj"]
+[ext_resource type="PackedScene" uid="uid://djltobvcddlom" path="res://player/hand/hand_rig.tscn" id="1_q11lk"]
+
+[node name="Hand" type="XRController3D"]
+tracker = &"left_hand"
+pose = &"grip"
+script = ExtResource("1_ftdcj")
+
+[node name="HandRig" parent="." instance=ExtResource("1_q11lk")]
+transform = Transform3D(-1.81059e-08, 1, 6.18172e-08, 0.707107, -3.09086e-08, 0.707107, 0.707107, 5.65142e-08, -0.707107, 0, 0.05, 0.15)

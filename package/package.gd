@@ -13,3 +13,8 @@ func _process(delta: float) -> void:
 func disable_shoot():
 	gravity_scale = 0.0
 	linear_velocity = Vector3(0,0,0)
+
+func pop_visualization():
+	var v = $MeshInstance3D
+	remove_child(v)
+	return v

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs66jlh2aur4p"]
+
+[ext_resource type="Script" path="res://house/house.gd" id="1_twx57"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ijpdb"]
+height = 1.0
+radius = 4.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g1cjm"]
+top_radius = 4.0
+bottom_radius = 4.0
+height = 1.0
+
+[node name="House" type="Area3D"]
+script = ExtResource("1_twx57")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_ijpdb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_g1cjm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

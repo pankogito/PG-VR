@@ -1,6 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bthfpxcsvoydj"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_gjslt"]
+[ext_resource type="PackedScene" uid="uid://bdw46gq7ee6oo" path="res://player/hand/hand.tscn" id="2_8d31w"]
 [ext_resource type="PackedScene" uid="uid://bogm8c0tdvk4x" path="res://manipulator/manipulator.tscn" id="2_bk2yo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uunoj"]
@@ -14,9 +15,6 @@ sky_material = SubResource("ProceduralSkyMaterial_uunoj")
 background_mode = 2
 sky = SubResource("Sky_wygok")
 tonemap_mode = 2
-
-[sub_resource type="BoxMesh" id="BoxMesh_gbhy1"]
-size = Vector3(0.05, 0.1, 0.1)
 
 [sub_resource type="Curve3D" id="Curve3D_hlgps"]
 _data = {
@@ -40,19 +38,15 @@ environment = SubResource("Environment_etb5x")
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 current = true
 
-[node name="XRController3D" type="XRController3D" parent="XROrigin3D"]
+[node name="Hand" parent="XROrigin3D" instance=ExtResource("2_8d31w")]
+
+[node name="Hand2" parent="XROrigin3D" instance=ExtResource("2_8d31w")]
 tracker = &"right_hand"
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRController3D"]
-mesh = SubResource("BoxMesh_gbhy1")
-
-[node name="XRController3D2" type="XRController3D" parent="XROrigin3D"]
-tracker = &"left_hand"
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRController3D2"]
-mesh = SubResource("BoxMesh_gbhy1")
 
 [node name="Manipulator" parent="." node_paths=PackedStringArray("hand") instance=ExtResource("2_bk2yo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 curve = SubResource("Curve3D_hlgps")
-hand = NodePath("../XROrigin3D/XRController3D2")
+hand = NodePath("../XROrigin3D/Hand")
+vibration_start = 0.01
+streach_ratio = 0.2
+jump_ratio = 0.2

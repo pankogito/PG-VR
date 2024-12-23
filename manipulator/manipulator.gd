@@ -12,7 +12,7 @@ extends Path3D
 
 @onready var handle:Node3D = $Handle
 @onready var handle_visualization:Node3D = $Handle/MeshInstance3D
-
+@onready var handle_visualization_position = $Handle/MeshInstance3D.position
 var vibration 
 func _ready() -> void:
 	_on_curve_changed()
@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 	
 	vibration = clamp(vibration,0,vibration_max)
 	
-	handle_visualization.position = vibration*Vector3(randf_range(-1,1),0,randf_range(-1,1))
+	handle_visualization.position = handle_visualization_position + vibration*Vector3(randf_range(-1,1),0,randf_range(-1,1))
 
 func set_hand(h:Node3D):
 	hand = h

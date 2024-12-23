@@ -6,8 +6,10 @@ extends XRController3D
 @export_range(0,10) var animation_speed = 4.0
 
 @onready var animation_player = $HandRig/AnimationPlayer
+@onready var grab_area = $HandRig/GrabArea
 
 var open = true
+var manipulator:Manipulator = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if tracker == "left_hand":
@@ -18,8 +20,15 @@ func _on_input_float_changed(name: String, value: float) -> void:
 		if value > trigger_value:
 			if open:
 				animation_player.play(animation_name,-1,animation_speed)
+				for colider in grab_area.get_overlapping_areas():
+					if colider.owner is Manipulator and colider.owner.hand == null:
+						manipulator = colider.owner
+						manipulator.hand = self
 				open = false
 		elif value < 1- trigger_value:
 			if not open:
 				animation_player.play(animation_name,-1,-animation_speed,true)
+				if manipulator:
+					manipulator.hand = null
+					manipulator = null
 				open = true

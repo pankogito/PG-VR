@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://dr7u40o62tpwn"]
+
+[ext_resource type="Script" path="res://tests/test_env.gd" id="1_u2mqd"]
+[ext_resource type="Script" path="res://tests/my_camera.gd" id="2_1tgf8"]
+[ext_resource type="PackedScene" uid="uid://d4atuo3dhdk7m" path="res://package/package.tscn" id="2_eyg4w"]
+[ext_resource type="PackedScene" uid="uid://cs66jlh2aur4p" path="res://house/house.tscn" id="4_lyivo"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rqcwv"]
+
+[sub_resource type="Sky" id="Sky_pi501"]
+sky_material = SubResource("ProceduralSkyMaterial_rqcwv")
+
+[sub_resource type="Environment" id="Environment_ufd82"]
+background_mode = 2
+sky = SubResource("Sky_pi501")
+
+[node name="TestEnv" type="Node3D"]
+script = ExtResource("1_u2mqd")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.942618, 0.333873, 0, -0.333873, 0.942618, 0, 4.42703, 7.59007)
+current = true
+script = ExtResource("2_1tgf8")
+
+[node name="Package" parent="." instance=ExtResource("2_eyg4w")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ufd82")
+
+[node name="House" parent="." instance=ExtResource("4_lyivo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4385, -1.95514, 4.6271)

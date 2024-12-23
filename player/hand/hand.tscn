@@ -5,8 +5,11 @@
 
 [node name="Hand" type="XRController3D"]
 tracker = &"left_hand"
-pose = &"grip"
 script = ExtResource("1_ftdcj")
 
 [node name="HandRig" parent="." instance=ExtResource("1_q11lk")]
-transform = Transform3D(-1.81059e-08, 1, 6.18172e-08, 0.707107, -3.09086e-08, 0.707107, 0.707107, 5.65142e-08, -0.707107, 0, 0.05, 0.15)
+transform = Transform3D(-7.98e-08, 1, 8.686e-08, 0.575248, -2.51449e-08, 0.817979, 0.817979, 1.15241e-07, -0.575248, -0.02, 0, 0.15)
+
+[node name="Label3D" type="Label3D" parent="."]
+
+[connection signal="input_float_changed" from="." to="." method="_on_input_float_changed"]

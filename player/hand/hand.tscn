@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdw46gq7ee6oo"]
+[gd_scene load_steps=4 format=3 uid="uid://bdw46gq7ee6oo"]
 
 [ext_resource type="Script" path="res://player/hand/hand.gd" id="1_ftdcj"]
 [ext_resource type="PackedScene" uid="uid://djltobvcddlom" path="res://player/hand/hand_rig.tscn" id="1_q11lk"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_63p5n"]
+height = 0.1
+radius = 0.03
 
 [node name="Hand" type="XRController3D"]
 tracker = &"left_hand"
@@ -9,6 +13,12 @@ script = ExtResource("1_ftdcj")
 
 [node name="HandRig" parent="." instance=ExtResource("1_q11lk")]
 transform = Transform3D(-7.98e-08, 1, 8.686e-08, 0.575248, -2.51449e-08, 0.817979, 0.817979, 1.15241e-07, -0.575248, -0.02, 0, 0.15)
+
+[node name="GrabArea" type="Area3D" parent="HandRig"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.1, -0.03, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HandRig/GrabArea"]
+shape = SubResource("CylinderShape3D_63p5n")
 
 [node name="Label3D" type="Label3D" parent="."]
 

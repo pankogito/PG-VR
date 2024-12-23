@@ -43,10 +43,9 @@ current = true
 [node name="Hand2" parent="XROrigin3D" instance=ExtResource("2_8d31w")]
 tracker = &"right_hand"
 
-[node name="Manipulator" parent="." node_paths=PackedStringArray("hand") instance=ExtResource("2_bk2yo")]
+[node name="Manipulator" parent="." instance=ExtResource("2_bk2yo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 curve = SubResource("Curve3D_hlgps")
-hand = NodePath("../XROrigin3D/Hand")
 vibration_start = 0.01
 streach_ratio = 0.2
 jump_ratio = 0.2

@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bthfpxcsvoydj"]
+[gd_scene load_steps=7 format=3 uid="uid://bthfpxcsvoydj"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_gjslt"]
 [ext_resource type="PackedScene" uid="uid://bdw46gq7ee6oo" path="res://player/hand/hand.tscn" id="2_8d31w"]
-[ext_resource type="PackedScene" uid="uid://bogm8c0tdvk4x" path="res://manipulator/manipulator.tscn" id="2_bk2yo"]
+[ext_resource type="PackedScene" uid="uid://dck61c5g2nq66" path="res://cannon/cannon.tscn" id="4_yc44v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uunoj"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -15,13 +15,6 @@ sky_material = SubResource("ProceduralSkyMaterial_uunoj")
 background_mode = 2
 sky = SubResource("Sky_wygok")
 tonemap_mode = 2
-
-[sub_resource type="Curve3D" id="Curve3D_hlgps"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0.1, 0.1, 0, -1, 1, 0, 0, 0, 0, -0.1, -0.1, 0, 0, 0, 0, 0, -0.1, 0, 0.1, 0.1, 0, 1, 0.00578326, 0, 0.1, 0.1, 0, 0.1, 0.1, 0, 0, 1, 0),
-"tilts": PackedFloat32Array(0, 0, 0, 0)
-}
-point_count = 4
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_gjslt")
@@ -43,9 +36,5 @@ current = true
 [node name="Hand2" parent="XROrigin3D" instance=ExtResource("2_8d31w")]
 tracker = &"right_hand"
 
-[node name="Manipulator" parent="." instance=ExtResource("2_bk2yo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-curve = SubResource("Curve3D_hlgps")
-vibration_start = 0.01
-streach_ratio = 0.2
-jump_ratio = 0.2
+[node name="Cannon" parent="." instance=ExtResource("4_yc44v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5)

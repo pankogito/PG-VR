@@ -9,28 +9,43 @@ class_name Manipulator
 @export_subgroup("vibration ratios")
 @export var streach_ratio = 0.1
 @export var jump_ratio = 0.1
-
+@export_subgroup("reset")
+@export var reset_speed = 0.0
+@export var reset_progress = 0.0
 
 @onready var handle:Node3D = $Handle
 @onready var handle_visualization:Node3D = $Handle/MeshInstance3D
 @onready var handle_visualization_position = $Handle/MeshInstance3D.position
 
 
-var vibration 
+var vibration
+
+signal progress_change(progress)
+
 func _ready() -> void:
 	_on_curve_changed()
-	$Handle.owner = self
+	handle.owner = self
+	handle.progress_ratio = reset_progress
+	progress_change.emit.call_deferred(reset_progress)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if not hand:
+		if reset_speed <= 0:
+			return
+		
+		var direction = sign(reset_progress-handle.progress_ratio)
+		if direction == 0:
+			return
+		handle.progress_ratio += direction*reset_speed*delta
+		if direction != sign(reset_progress - handle.progress_ratio):
+			handle.progress_ratio = reset_progress
 		return
-	
 	var prevoius_positon = handle.global_position
 	
 	var offset = curve.get_closest_offset(to_local(hand.global_position))
 	handle.progress_ratio = offset / curve.get_baked_length()
-	
+	progress_change.emit(handle.progress_ratio)
 	vibration = streach_ratio*(handle.global_position - hand.global_position).length()
 	
 	vibration += jump_ratio*(handle.global_position - prevoius_positon).length()

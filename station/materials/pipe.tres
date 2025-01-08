@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bk8evo7627iyj"]
+
+[ext_resource type="Texture2D" uid="uid://cycp5u6lss0qb" path="res://station/textures/CurvedPipeVertical/CurvedPipeVertical_color.png" id="1_c2jfc"]
+[ext_resource type="Texture2D" uid="uid://bjnbwfxuqlox6" path="res://station/textures/CurvedPipeVertical/CurvedPipeVertical_metallic.png" id="2_8njv5"]
+[ext_resource type="Texture2D" uid="uid://bysjixps2gg27" path="res://station/textures/CurvedPipeVertical/CurvedPipeVertical_normal.png" id="3_y5eqo"]
+[ext_resource type="Texture2D" uid="uid://buw2mec4jshr4" path="res://station/textures/CurvedPipeVertical/CurvedPipeVertical_roughness.png" id="4_nooqq"]
+
+[resource]
+albedo_texture = ExtResource("1_c2jfc")
+metallic = 1.0
+metallic_texture = ExtResource("2_8njv5")
+roughness_texture = ExtResource("4_nooqq")
+normal_enabled = true
+normal_texture = ExtResource("3_y5eqo")

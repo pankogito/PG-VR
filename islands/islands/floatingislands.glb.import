@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bc5w72sgqn4ua"
-path="res://.godot/imported/station.fbx-88fccbdb8d33a0fe6b19683ab5ee1e88.scn"
+uid="uid://dy84fkyrtofce"
+path="res://.godot/imported/floatingislands.glb-c1d243e23f46b47ce887d9c3c3602804.scn"
 
 [deps]
 
-source_file="res://station/station.fbx"
-dest_files=["res://.godot/imported/station.fbx-88fccbdb8d33a0fe6b19683ab5ee1e88.scn"]
+source_file="res://islands/islands/floatingislands.glb"
+dest_files=["res://.godot/imported/floatingislands.glb-c1d243e23f46b47ce887d9c3c3602804.scn"]
 
 [params]
 
@@ -27,11 +27,10 @@ meshes/force_disable_compression=false
 skins/use_named_skins=false
 animation/import=false
 animation/fps=30
-animation/trimming=true
-animation/remove_immutable_tracks=true
+animation/trimming=false
+animation/remove_immutable_tracks=false
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
+gltf/naming_version=1
+gltf/embedded_image_handling=0

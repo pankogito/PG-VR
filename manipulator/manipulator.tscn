@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://manipulator/manipulator.gd" id="1_fsyb1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7lton"]
-transparency = 1
 albedo_color = Color(1, 1, 1, 0.352941)
 
 [sub_resource type="BoxMesh" id="BoxMesh_826xl"]
@@ -20,7 +19,7 @@ vibration_start = 0.02
 
 [node name="Handle" type="PathFollow3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.999969, 0, 0, 0, 0.999969, 0, 0, 0)
-progress = 0.334125
+loop = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Handle"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)

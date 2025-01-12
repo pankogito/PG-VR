@@ -1,0 +1,127 @@
+[gd_scene load_steps=11 format=3 uid="uid://dck61c5g2nq66"]
+
+[ext_resource type="Script" path="res://cannon/cannon.gd" id="1_j3q04"]
+[ext_resource type="PackedScene" uid="uid://d4atuo3dhdk7m" path="res://package/package.tscn" id="2_s0uuk"]
+[ext_resource type="PackedScene" uid="uid://bogm8c0tdvk4x" path="res://manipulator/manipulator.tscn" id="3_r1g1k"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_bje5d"]
+radial_segments = 32
+rings = 16
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fyoqt"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 4.0
+radial_segments = 32
+
+[sub_resource type="BoxMesh" id="BoxMesh_dbvkn"]
+size = Vector3(1.5, 0.6, 1.5)
+
+[sub_resource type="Curve3D" id="Curve3D_m6nbx"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.3, 0, 0, -1, 0, 0, 1, 0, 0, 0, 0.5, 0, 0, 0, 0, 0, 0, 0, 0.3, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_fw7v6"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0.5, 0, 0.5, 0, 0, 0, 0, 0, 0.2, 0, 0, 0, 0, 0, -0.5, 0, 0, -0.2, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.5, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_3cm72"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.2, 0, 0, 0, 0, 0, 0, 0, 0, 0.2, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_qknk0"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0.3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="Cannon" type="Node3D"]
+script = ExtResource("1_j3q04")
+yaw_min = -45.0
+yaw_max = 45.0
+pitch_min = -80.0
+pitch_max = -20.0
+
+[node name="Barrel" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0662739, 0.997801, 0, -0.997802, 0.0662739, 0, 0, 0)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Barrel"]
+transform = Transform3D(1, 0, 0, 0, 0.346936, -0.937889, 0, 0.937889, 0.346936, 0, 0, 0)
+mesh = SubResource("SphereMesh_bje5d")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Barrel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 2, 0)
+mesh = SubResource("CylinderMesh_fyoqt")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Barrel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 2, 0)
+mesh = SubResource("CylinderMesh_fyoqt")
+
+[node name="Package" parent="Barrel" instance=ExtResource("2_s0uuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.6)
+freeze = true
+
+[node name="FinalMarker" type="Marker3D" parent="Barrel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0.6)
+
+[node name="StartMarker" type="Marker3D" parent="Barrel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.6)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, 0, 1, 0, -0.3, 0)
+mesh = SubResource("BoxMesh_dbvkn")
+skeleton = NodePath("../Barrel/MeshInstance3D3")
+
+[node name="ControllPanel" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+
+[node name="Yaw" parent="ControllPanel" instance=ExtResource("3_r1g1k")]
+transform = Transform3D(0.364877, 0, -0.931056, 0, 1, 0, 0.931056, 0, 0.364877, 0.5, 0, 0.5)
+curve = SubResource("Curve3D_m6nbx")
+vibration_max = 0.05
+streach_ratio = 0.1
+jump_ratio = 0.1
+reset_speed = 0.0
+reset_progress = 0.5
+
+[node name="Pitch" parent="ControllPanel" instance=ExtResource("3_r1g1k")]
+transform = Transform3D(0.2706, 0, 0.962692, 0, 1, 0, -0.962692, 0, 0.2706, -0.6, 0, 0.5)
+curve = SubResource("Curve3D_fw7v6")
+vibration_max = 0.05
+streach_ratio = 0.1
+jump_ratio = 0.1
+reset_speed = 0.0
+reset_progress = 0.0
+
+[node name="Load" parent="ControllPanel" instance=ExtResource("3_r1g1k")]
+curve = SubResource("Curve3D_3cm72")
+vibration_max = 0.05
+streach_ratio = 0.1
+jump_ratio = 0.1
+reset_speed = 0.5
+reset_progress = 0.5
+
+[node name="Fire" parent="ControllPanel" instance=ExtResource("3_r1g1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+curve = SubResource("Curve3D_qknk0")
+vibration_max = 0.05
+streach_ratio = 0.1
+jump_ratio = 0.1
+reset_speed = 1.0
+reset_progress = 0.0
+
+[connection signal="progress_change" from="ControllPanel/Yaw" to="." method="yaw"]
+[connection signal="progress_change" from="ControllPanel/Pitch" to="." method="pitch"]
+[connection signal="progress_change" from="ControllPanel/Load" to="." method="_on_load_progress_change"]
+[connection signal="progress_change" from="ControllPanel/Fire" to="." method="_on_fire_progress_change"]

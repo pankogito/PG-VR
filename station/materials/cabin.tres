@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://c3up7f6ibgi3h"]
+
+[ext_resource type="Texture2D" uid="uid://cdowwoktstrew" path="res://station/textures/Cabin/Cabin_color.png" id="1_0ed0c"]
+[ext_resource type="Texture2D" uid="uid://vb0i2dum1tjp" path="res://station/textures/Cabin/Cabin_metallic.png" id="2_m06bd"]
+[ext_resource type="Texture2D" uid="uid://3hrc6hlmso4e" path="res://station/textures/Cabin/Cabin_normal.png" id="3_x66l1"]
+[ext_resource type="Texture2D" uid="uid://b56bxixao2ydc" path="res://station/textures/Cabin/Cabin_roughness.png" id="4_cf3b2"]
+
+[resource]
+albedo_texture = ExtResource("1_0ed0c")
+metallic = 1.0
+metallic_texture = ExtResource("2_m06bd")
+roughness_texture = ExtResource("4_cf3b2")
+normal_enabled = true
+normal_texture = ExtResource("3_x66l1")

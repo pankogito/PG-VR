@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://hq56bmcyvtgq"]
+
+[ext_resource type="Texture2D" uid="uid://bu4cf5qrdy1e4" path="res://station/textures/CannonCover/CannonCover_color.png" id="1_qu44e"]
+[ext_resource type="Texture2D" uid="uid://ckd534nuk3bhq" path="res://station/textures/CannonCover/CannonCover_metallic.png" id="2_6kaa6"]
+[ext_resource type="Texture2D" uid="uid://by1mrarbjf64a" path="res://station/textures/CannonCover/CannonCover_normal.png" id="3_ilf03"]
+[ext_resource type="Texture2D" uid="uid://demah4n0xfp3u" path="res://station/textures/CannonCover/CannonCover_roughness.png" id="4_nji43"]
+
+[resource]
+albedo_texture = ExtResource("1_qu44e")
+metallic = 1.0
+metallic_texture = ExtResource("2_6kaa6")
+roughness_texture = ExtResource("4_nji43")
+normal_enabled = true
+normal_texture = ExtResource("3_ilf03")

@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://hl28leaimf61"]
+
+[ext_resource type="Texture2D" uid="uid://bqw8fncbtwt22" path="res://station/textures/Doors/Doors_color.png" id="1_t2rkb"]
+[ext_resource type="Texture2D" uid="uid://c1xs6v3wrcom5" path="res://station/textures/Doors/Doors_metallic.png" id="2_k8l10"]
+[ext_resource type="Texture2D" uid="uid://cqkkx8x046pj2" path="res://station/textures/Doors/Doors_normal.png" id="3_cdtmf"]
+[ext_resource type="Texture2D" uid="uid://drpr3wydfqm58" path="res://station/textures/Doors/Doors_roughness.png" id="4_fwfg7"]
+
+[resource]
+albedo_texture = ExtResource("1_t2rkb")
+metallic = 1.0
+metallic_texture = ExtResource("2_k8l10")
+roughness_texture = ExtResource("4_fwfg7")
+normal_enabled = true
+normal_texture = ExtResource("3_cdtmf")

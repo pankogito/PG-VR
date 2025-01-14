@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://d1dttrybjcelg"]
+
+[ext_resource type="Texture2D" uid="uid://cts462sh1o7c2" path="res://station/textures/CannonPillar/CannonPillar_color.png" id="1_voa37"]
+[ext_resource type="Texture2D" uid="uid://c0derwi4jj52m" path="res://station/textures/CannonPillar/CannonPillar_metallic.png" id="2_3sr3t"]
+[ext_resource type="Texture2D" uid="uid://da5kcsafc4c7e" path="res://station/textures/CannonPillar/CannonPillar_normal.png" id="3_t5sqh"]
+[ext_resource type="Texture2D" uid="uid://d0oww3y3qqk8q" path="res://station/textures/CannonPillar/CannonPillar_roughness.png" id="4_rht7m"]
+
+[resource]
+albedo_texture = ExtResource("1_voa37")
+metallic = 1.0
+metallic_texture = ExtResource("2_3sr3t")
+roughness_texture = ExtResource("4_rht7m")
+normal_enabled = true
+normal_texture = ExtResource("3_t5sqh")

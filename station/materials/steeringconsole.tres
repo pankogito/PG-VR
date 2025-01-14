@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://d1lt3i6pnesd"]
+
+[ext_resource type="Texture2D" uid="uid://c7iikx2a0mhe2" path="res://station/textures/SteeringConsole/SteeringConsole_color.png" id="1_4uq0x"]
+[ext_resource type="Texture2D" uid="uid://dt6jm36x14mjy" path="res://station/textures/SteeringConsole/SteeringConsole_metallic.png" id="2_isqua"]
+[ext_resource type="Texture2D" uid="uid://b5n3vuiwjgu4u" path="res://station/textures/SteeringConsole/SteeringConsole_normal.png" id="3_4e441"]
+[ext_resource type="Texture2D" uid="uid://du7t4txsuj767" path="res://station/textures/SteeringConsole/SteeringConsole_roughness.png" id="4_6l8hp"]
+
+[resource]
+albedo_texture = ExtResource("1_4uq0x")
+metallic = 1.0
+metallic_texture = ExtResource("2_isqua")
+roughness_texture = ExtResource("4_6l8hp")
+normal_enabled = true
+normal_texture = ExtResource("3_4e441")

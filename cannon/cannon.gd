@@ -9,14 +9,14 @@ class_name Cannon
 @export var pitch_min:float
 @export var pitch_max:float
 
-@onready var barrel = $Barrel
+@export var barrel:Node3D
 
 var initial_velocity:float = 10
 
-@onready var package = $Barrel/Package
+var package = null
 
-@onready var final_marker = $Barrel/FinalMarker
-@onready var start_marker = $Barrel/StartMarker
+@onready var final_marker = %FinalMarker
+@onready var start_marker = %StartMarker
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,15 +35,13 @@ func fire():
 	var t = 2*4/initial_velocity
 	
 	# request package movement to shot positon
-	tween.tween_property(package,"global_position",final_marker.global_position,t) \
-		.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
+	tween.tween_interval(t)
 	await tween.finished
 	
 	# remove package from cannon
-	var trans = package.global_transform
 	package.get_parent().remove_child(package)
 	get_parent().add_child(package)
-	package.global_transform = trans
+	package.global_transform = final_marker.global_transform
 	
 	# set physics
 	var v:Vector3 = final_marker.global_position - start_marker.global_position
@@ -58,7 +56,7 @@ func yaw(ratio):
 
 # set yaw to given ratio between limits
 func pitch(ratio):
-	barrel.rotation_degrees.x = pitch_min + (pitch_max-pitch_min)*ratio
+	barrel.rotation_degrees.z = pitch_min + (pitch_max-pitch_min)*ratio
 
 # if loaded and progress above 90% fire
 func _on_fire_progress_change(progress: Variant) -> void:

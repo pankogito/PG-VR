@@ -2,6 +2,7 @@ extends Path3D
 class_name Manipulator
 
 @export var hand:XRController3D
+@export  var handle_visualization:Node3D 
 
 @export_subgroup("vibration borders")
 @export var vibration_start = 0.01
@@ -14,8 +15,7 @@ class_name Manipulator
 @export var reset_progress = 0.0
 
 @onready var handle:Node3D = $Handle
-@onready var handle_visualization:Node3D = $Handle/MeshInstance3D
-@onready var handle_visualization_position = $Handle/MeshInstance3D.position
+@onready var handle_visualization_position = handle_visualization.position
 
 
 var vibration
@@ -68,7 +68,7 @@ func _on_curve_changed() -> void:
 	var count:float = 0
 	var markers = get_child_count()-1
 	for marker in get_children():
-		if marker == handle:
+		if not marker.name.begins_with("Marker"):
 			continue
 		marker.progress_ratio = count/(markers-1)
 		

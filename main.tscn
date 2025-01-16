@@ -36,5 +36,4 @@ current = true
 [node name="Hand2" parent="XROrigin3D" instance=ExtResource("2_8d31w")]
 tracker = &"right_hand"
 
-[node name="Cannon" parent="." instance=ExtResource("4_yc44v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5)
+[node name="Cannon" parent="XROrigin3D" instance=ExtResource("4_yc44v")]

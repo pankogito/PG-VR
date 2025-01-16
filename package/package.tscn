@@ -3,8 +3,10 @@
 [ext_resource type="Script" path="res://package/package.gd" id="1_gqa2d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pyciw"]
+size = Vector3(0.4, 0.4, 0.4)
 
 [sub_resource type="BoxMesh" id="BoxMesh_hxwvm"]
+size = Vector3(0.4, 0.4, 0.4)
 
 [node name="Package" type="RigidBody3D"]
 gravity_scale = 0.2

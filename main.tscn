@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://main.gd" id="1_gjslt"]
 [ext_resource type="PackedScene" uid="uid://bdw46gq7ee6oo" path="res://player/hand/hand.tscn" id="2_8d31w"]
 [ext_resource type="PackedScene" uid="uid://cs66jlh2aur4p" path="res://house/house.tscn" id="4_qavfu"]
+[ext_resource type="PackedScene" uid="uid://cmwhljoef4cey" path="res://cleaner/cleaner.tscn" id="4_dylhh"]
 [ext_resource type="PackedScene" uid="uid://dck61c5g2nq66" path="res://cannon/cannon.tscn" id="4_yc44v"]
 [ext_resource type="PackedScene" path="res://house/house_with_area.tscn" id="5_h5o86"]
 [ext_resource type="PackedScene" path="res://house/house_with_colisions.tscn" id="6_jufsq"]
@@ -49,3 +50,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.869139, 1.19209e-06, -27.8
 
 [node name="House3" parent="." instance=ExtResource("6_jufsq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6921, 0, -12.3846)
+
+[node name="Cleaner" parent="." instance=ExtResource("4_dylhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)

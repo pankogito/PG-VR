@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dr7u40o62tpwn"]
+[gd_scene load_steps=9 format=3 uid="uid://dr7u40o62tpwn"]
 
 [ext_resource type="Script" path="res://tests/test_env.gd" id="1_u2mqd"]
 [ext_resource type="Script" path="res://tests/my_camera.gd" id="2_1tgf8"]
 [ext_resource type="PackedScene" uid="uid://d4atuo3dhdk7m" path="res://package/package.tscn" id="2_eyg4w"]
 [ext_resource type="PackedScene" uid="uid://cs66jlh2aur4p" path="res://house/house.tscn" id="4_lyivo"]
+[ext_resource type="PackedScene" uid="uid://cmwhljoef4cey" path="res://cleaner/cleaner.tscn" id="5_g8yax"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rqcwv"]
 
@@ -31,3 +32,6 @@ environment = SubResource("Environment_ufd82")
 
 [node name="House" parent="." instance=ExtResource("4_lyivo")]
 transform = Transform3D(0.880121, 0, -0.474749, 0, 1, 0, 0.474749, 0, 0.880121, 6.4385, -1.95514, 4.6271)
+
+[node name="Cleaner" parent="." instance=ExtResource("5_g8yax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)

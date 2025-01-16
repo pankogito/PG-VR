@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bdd5e616aj3c1"]
+
+[ext_resource type="Texture2D" uid="uid://bu173fclmn5pj" path="res://station/textures/PowerLever/PowerLever_color.png" id="1_4whjf"]
+[ext_resource type="Texture2D" uid="uid://01wu2c27vsur" path="res://station/textures/PowerLever/PowerLever_metallic.png" id="2_p2hwi"]
+[ext_resource type="Texture2D" uid="uid://berntufwhc5y0" path="res://station/textures/PowerLever/PowerLever_normal.png" id="3_brs7s"]
+[ext_resource type="Texture2D" uid="uid://cptxkkhagu2kg" path="res://station/textures/PowerLever/PowerLever_roughness.png" id="4_s8ol4"]
+
+[resource]
+albedo_texture = ExtResource("1_4whjf")
+metallic = 1.0
+metallic_texture = ExtResource("2_p2hwi")
+roughness_texture = ExtResource("4_s8ol4")
+normal_enabled = true
+normal_texture = ExtResource("3_brs7s")

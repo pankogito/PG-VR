@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://gu8ojiw3fpm3"]
+
+[ext_resource type="Texture2D" uid="uid://bc2s0cywkaa83" path="res://station/textures/Bench/Bench_color.png" id="1_yw4bk"]
+[ext_resource type="Texture2D" uid="uid://px3hgmumpa5a" path="res://station/textures/Bench/Bench_metallic.png" id="2_62x47"]
+[ext_resource type="Texture2D" uid="uid://dngxvcx1k7vw5" path="res://station/textures/Bench/Bench_normal.png" id="3_wgmnu"]
+[ext_resource type="Texture2D" uid="uid://75kv2pxw348x" path="res://station/textures/Bench/Bench_roughness.png" id="4_orfxo"]
+
+[resource]
+albedo_texture = ExtResource("1_yw4bk")
+metallic = 1.0
+metallic_texture = ExtResource("2_62x47")
+roughness_texture = ExtResource("4_orfxo")
+normal_enabled = true
+normal_texture = ExtResource("3_wgmnu")

@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://d0q4kolqw1ig2"]
+
+[ext_resource type="Texture2D" uid="uid://c4opimdnujumr" path="res://station/textures/Grate/Grate_color.png" id="1_3hebq"]
+[ext_resource type="Texture2D" uid="uid://p6kuxuj3t2xi" path="res://station/textures/Grate/Grate_metallic.png" id="2_u8rb0"]
+[ext_resource type="Texture2D" uid="uid://bcbcgcbedog6w" path="res://station/textures/Grate/Grate_normal.png" id="3_nf8lu"]
+[ext_resource type="Texture2D" uid="uid://bu5yoyudp32l5" path="res://station/textures/Grate/Grate_roughness.png" id="4_0ypkw"]
+
+[resource]
+albedo_texture = ExtResource("1_3hebq")
+metallic = 1.0
+metallic_texture = ExtResource("2_u8rb0")
+roughness_texture = ExtResource("4_0ypkw")
+normal_enabled = true
+normal_texture = ExtResource("3_nf8lu")

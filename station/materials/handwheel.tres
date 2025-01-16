@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://c33lp3dqjtm6e"]
+
+[ext_resource type="Texture2D" uid="uid://08enuyuyd3ky" path="res://station/textures/HorizontalHandwheel/HorizontalHandwheel_color.png" id="1_4dc3m"]
+[ext_resource type="Texture2D" uid="uid://cg76yvcfghyfy" path="res://station/textures/HorizontalHandwheel/HorizontalHandwheel_metallic.png" id="2_jxepd"]
+[ext_resource type="Texture2D" uid="uid://crid2jxh7sgsl" path="res://station/textures/HorizontalHandwheel/HorizontalHandwheel_normal.png" id="3_u33xm"]
+[ext_resource type="Texture2D" uid="uid://cmcck0ao6jvla" path="res://station/textures/HorizontalHandwheel/HorizontalHandwheel_roughness.png" id="4_cuode"]
+
+[resource]
+albedo_texture = ExtResource("1_4dc3m")
+metallic = 1.0
+metallic_texture = ExtResource("2_jxepd")
+roughness_texture = ExtResource("4_cuode")
+normal_enabled = true
+normal_texture = ExtResource("3_u33xm")

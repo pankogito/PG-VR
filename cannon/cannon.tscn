@@ -1,21 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://dck61c5g2nq66"]
 
 [ext_resource type="Script" path="res://cannon/cannon.gd" id="1_j3q04"]
-[ext_resource type="PackedScene" uid="uid://d4atuo3dhdk7m" path="res://package/package.tscn" id="2_s0uuk"]
 [ext_resource type="PackedScene" uid="uid://bogm8c0tdvk4x" path="res://manipulator/manipulator.tscn" id="3_r1g1k"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_bje5d"]
-radial_segments = 32
-rings = 16
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_fyoqt"]
-top_radius = 0.1
-bottom_radius = 0.1
-height = 4.0
-radial_segments = 32
-
-[sub_resource type="BoxMesh" id="BoxMesh_dbvkn"]
-size = Vector3(1.5, 0.6, 1.5)
+[ext_resource type="PackedScene" uid="uid://d1va6ij1npi6l" path="res://manipulator/wheel_manipulator.tscn" id="4_p5abw"]
+[ext_resource type="PackedScene" uid="uid://88035g1gf3ch" path="res://station/station.tscn" id="4_udn4d"]
+[ext_resource type="PackedScene" uid="uid://bj7od120y0hmw" path="res://manipulator/lever_manipulator.tscn" id="5_21x88"]
+[ext_resource type="PackedScene" uid="uid://bvv5bmepfu7qu" path="res://manipulator/handle_manipulator.tscn" id="6_ppms8"]
 
 [sub_resource type="Curve3D" id="Curve3D_m6nbx"]
 _data = {
@@ -45,83 +35,94 @@ _data = {
 }
 point_count = 2
 
-[node name="Cannon" type="Node3D"]
+[node name="Cannon" type="Node3D" node_paths=PackedStringArray("barrel")]
 script = ExtResource("1_j3q04")
-yaw_min = -45.0
-yaw_max = 45.0
-pitch_min = -80.0
-pitch_max = -20.0
-
-[node name="Barrel" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.0662739, 0.997801, 0, -0.997802, 0.0662739, 0, 0, 0)
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Barrel"]
-transform = Transform3D(1, 0, 0, 0, 0.346936, -0.937889, 0, 0.937889, 0.346936, 0, 0, 0)
-mesh = SubResource("SphereMesh_bje5d")
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Barrel"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 2, 0)
-mesh = SubResource("CylinderMesh_fyoqt")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Barrel"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 2, 0)
-mesh = SubResource("CylinderMesh_fyoqt")
-
-[node name="Package" parent="Barrel" instance=ExtResource("2_s0uuk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.6)
-freeze = true
-
-[node name="FinalMarker" type="Marker3D" parent="Barrel"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0.6)
-
-[node name="StartMarker" type="Marker3D" parent="Barrel"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.6)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, 0, 1, 0, -0.3, 0)
-mesh = SubResource("BoxMesh_dbvkn")
-skeleton = NodePath("../Barrel/MeshInstance3D3")
+yaw_min = -90.0
+pitch_min = -45.0
+pitch_max = -5.0
+barrel = NodePath("station/Cannon")
 
 [node name="ControllPanel" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.5, 1, -0.5)
+visible = false
 
 [node name="Yaw" parent="ControllPanel" instance=ExtResource("3_r1g1k")]
 transform = Transform3D(0.364877, 0, -0.931056, 0, 1, 0, 0.931056, 0, 0.364877, 0.5, 0, 0.5)
 curve = SubResource("Curve3D_m6nbx")
-vibration_max = 0.05
-streach_ratio = 0.1
-jump_ratio = 0.1
-reset_speed = 0.0
 reset_progress = 0.5
 
 [node name="Pitch" parent="ControllPanel" instance=ExtResource("3_r1g1k")]
 transform = Transform3D(0.2706, 0, 0.962692, 0, 1, 0, -0.962692, 0, 0.2706, -0.6, 0, 0.5)
 curve = SubResource("Curve3D_fw7v6")
-vibration_max = 0.05
-streach_ratio = 0.1
-jump_ratio = 0.1
-reset_speed = 0.0
-reset_progress = 0.0
 
 [node name="Load" parent="ControllPanel" instance=ExtResource("3_r1g1k")]
 curve = SubResource("Curve3D_3cm72")
-vibration_max = 0.05
-streach_ratio = 0.1
-jump_ratio = 0.1
 reset_speed = 0.5
 reset_progress = 0.5
 
 [node name="Fire" parent="ControllPanel" instance=ExtResource("3_r1g1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 curve = SubResource("Curve3D_qknk0")
-vibration_max = 0.05
-streach_ratio = 0.1
-jump_ratio = 0.1
 reset_speed = 1.0
-reset_progress = 0.0
+
+[node name="station" parent="." instance=ExtResource("4_udn4d")]
+
+[node name="HorizontalHandwheel" parent="station/SteeringConsole" index="4"]
+visible = false
+
+[node name="PowerLever" parent="station/SteeringConsole" index="5"]
+visible = false
+
+[node name="VerticalHandwheel" parent="station/SteeringConsole" index="6"]
+visible = false
+
+[node name="WheelManipulator" parent="station/SteeringConsole" index="7" instance=ExtResource("4_p5abw")]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, -0.7, 0.91547, -0.2)
+
+[node name="WheelManipulator2" parent="station/SteeringConsole" index="8" instance=ExtResource("4_p5abw")]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, -0.7, 0.91547, 0.2)
+
+[node name="LewerManipulator" parent="station/SteeringConsole" index="9" instance=ExtResource("5_21x88")]
+transform = Transform3D(0.549525, 0.444997, -0.707107, -0.629321, 0.777146, 2.31608e-08, 0.549525, 0.444997, 0.707107, -0.47646, 1.01189, -0.57548)
+reset_speed = 0.5
+
+[node name="CannonPillar" parent="station" index="4"]
+visible = false
+
+[node name="CurvedPipeVertical" parent="station" index="5"]
+visible = false
+
+[node name="CurvedPipeHorizontal" parent="station" index="7"]
+visible = false
+
+[node name="LaunchHandle" parent="station" index="8"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.2, 1.9, -0.2)
+visible = false
+
+[node name="Grate" parent="station" index="14"]
+visible = false
+
+[node name="Cannon" parent="station" index="15"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -0.7, 0.4, -0.7)
+
+[node name="FinalMarker" type="Marker3D" parent="station/Cannon" index="0"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="StartMarker" type="Marker3D" parent="station/Cannon" index="1"]
+unique_name_in_owner = true
+
+[node name="HandleManipulator" parent="station" instance=ExtResource("6_ppms8")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.2, 1.9, -0.2)
+reset_speed = 4.0
 
 [connection signal="progress_change" from="ControllPanel/Yaw" to="." method="yaw"]
 [connection signal="progress_change" from="ControllPanel/Pitch" to="." method="pitch"]
 [connection signal="progress_change" from="ControllPanel/Load" to="." method="_on_load_progress_change"]
 [connection signal="progress_change" from="ControllPanel/Fire" to="." method="_on_fire_progress_change"]
+[connection signal="progress_change" from="station/SteeringConsole/WheelManipulator" to="." method="yaw"]
+[connection signal="progress_change" from="station/SteeringConsole/WheelManipulator2" to="." method="pitch"]
+[connection signal="progress_change" from="station/SteeringConsole/LewerManipulator" to="." method="_on_load_progress_change"]
+[connection signal="progress_change" from="station/HandleManipulator" to="." method="_on_fire_progress_change"]
+
+[editable path="station"]

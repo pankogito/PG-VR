@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bthfpxcsvoydj"]
+[gd_scene load_steps=10 format=3 uid="uid://bthfpxcsvoydj"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_gjslt"]
 [ext_resource type="PackedScene" uid="uid://bdw46gq7ee6oo" path="res://player/hand/hand.tscn" id="2_8d31w"]
+[ext_resource type="PackedScene" uid="uid://cs66jlh2aur4p" path="res://house/house.tscn" id="4_qavfu"]
 [ext_resource type="PackedScene" uid="uid://dck61c5g2nq66" path="res://cannon/cannon.tscn" id="4_yc44v"]
+[ext_resource type="PackedScene" uid="uid://dhegp1dq20la3" path="res://house/house_with_area.tscn" id="5_h5o86"]
+[ext_resource type="PackedScene" uid="uid://tgmwhkhrlcve" path="res://house/house_with_colisions.tscn" id="6_jufsq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uunoj"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -38,3 +41,12 @@ tracker = &"right_hand"
 
 [node name="Cannon" parent="." instance=ExtResource("4_yc44v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5)
+
+[node name="House" parent="." instance=ExtResource("4_qavfu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -18.6584)
+
+[node name="House2" parent="." instance=ExtResource("5_h5o86")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.869139, 1.19209e-06, -27.8281)
+
+[node name="House3" parent="." instance=ExtResource("6_jufsq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6921, 0, -12.3846)

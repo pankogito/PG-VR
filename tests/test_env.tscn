@@ -18,14 +18,16 @@ sky = SubResource("Sky_pi501")
 script = ExtResource("1_u2mqd")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.942618, 0.333873, 0, -0.333873, 0.942618, 0, 4.42703, 7.59007)
+transform = Transform3D(-0.954813, 0.0992298, -0.280154, 4.20403e-10, 0.942618, 0.333873, 0.297208, 0.318786, -0.900024, 1.73699, 0.122474, -6.25496)
 current = true
 script = ExtResource("2_1tgf8")
 
 [node name="Package" parent="." instance=ExtResource("2_eyg4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71732, 0, -0.0510064)
+gravity_scale = 0.6
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ufd82")
 
 [node name="House" parent="." instance=ExtResource("4_lyivo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4385, -1.95514, 4.6271)
+transform = Transform3D(0.880121, 0, -0.474749, 0, 1, 0, 0.474749, 0, 0.880121, 6.4385, -1.95514, 4.6271)

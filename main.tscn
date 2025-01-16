@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bdw46gq7ee6oo" path="res://player/hand/hand.tscn" id="2_8d31w"]
 [ext_resource type="PackedScene" uid="uid://cs66jlh2aur4p" path="res://house/house.tscn" id="4_qavfu"]
 [ext_resource type="PackedScene" uid="uid://dck61c5g2nq66" path="res://cannon/cannon.tscn" id="4_yc44v"]
-[ext_resource type="PackedScene" uid="uid://dhegp1dq20la3" path="res://house/house_with_area.tscn" id="5_h5o86"]
-[ext_resource type="PackedScene" uid="uid://tgmwhkhrlcve" path="res://house/house_with_colisions.tscn" id="6_jufsq"]
+[ext_resource type="PackedScene" path="res://house/house_with_area.tscn" id="5_h5o86"]
+[ext_resource type="PackedScene" path="res://house/house_with_colisions.tscn" id="6_jufsq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uunoj"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

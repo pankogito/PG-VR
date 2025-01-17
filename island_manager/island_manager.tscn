@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dld8lak54g2yf"]
+
+[ext_resource type="Script" path="res://island_manager/island_manager.gd" id="1_1n1lh"]
+
+[node name="IslandManager" type="Node3D"]
+script = ExtResource("1_1n1lh")

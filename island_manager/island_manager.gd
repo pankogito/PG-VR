@@ -33,14 +33,12 @@ func add_house(path: Path3D) -> void:
 	if packed_scene:
 		var instance = packed_scene.instantiate()
 		path_follow.add_child(instance)
-		
 		# Connect the signal from the instance to a function in IslandManager
-		instance.package_arrived.connect(_on_house_signal)
+		instance.package_arrived.connect(_on_house_signal.bind(path_follow))
 		
 		var path_length = abs(r1 - r2)
 		var duration = path_length / instance.speed
 		
-		print(duration)
 		
 		# Create a Tween to animate the progress_ratio
 		var tween = create_tween()
@@ -53,15 +51,15 @@ func add_house(path: Path3D) -> void:
 		tweens[instance] = tween
 
 # Handle the signal from the house and stop the tween
-func _on_house_signal(instance):
+func _on_house_signal(instance,path_follow):
 	if instance in tweens:
 		var tween = tweens[instance]
-		tween.stop_all()
-		tween.queue_free()
+		tween.kill()
 		tweens.erase(instance)
-		print("Tween stopped for instance: ", instance)
+		
 		var new_tween = create_tween()
-		new_tween.tween_property(instance, "progress_ratio", 0.0, instance. progress_ratio * 5)
+		new_tween.tween_property(path_follow, "progress_ratio", 0.0,path_follow.progress_ratio * 5)
+		tween.tween_callback(path_follow.queue_free)
 		new_tween.tween_callback(house_finished_track.emit.bind(instance))
 
 # Function to add a new house to the track with the least children

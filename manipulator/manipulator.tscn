@@ -47,12 +47,14 @@ shape = SubResource("CylinderShape3D_i3fax")
 
 [node name="Marker" type="PathFollow3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.499999, 0, 0, 0, 0.499999, 0, 0, 0)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Marker"]
 mesh = SubResource("BoxMesh_826xl")
 
 [node name="Marker2" type="PathFollow3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.499999, 0, 0, 0, 0.499999, 0, 0, 0)
+visible = false
 progress = 0.349869
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Marker2"]
@@ -60,6 +62,7 @@ mesh = SubResource("BoxMesh_826xl")
 
 [node name="Marker3" type="PathFollow3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+visible = false
 progress = 0.699739
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Marker3"]
@@ -67,6 +70,7 @@ mesh = SubResource("BoxMesh_826xl")
 
 [node name="Marker4" type="PathFollow3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+visible = false
 progress = 1.04961
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Marker4"]
@@ -74,6 +78,7 @@ mesh = SubResource("BoxMesh_826xl")
 
 [node name="Marker5" type="PathFollow3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+visible = false
 progress = 1.39948
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Marker5"]
@@ -81,6 +86,7 @@ mesh = SubResource("BoxMesh_826xl")
 
 [node name="Marker6" type="PathFollow3D" parent="."]
 transform = Transform3D(3.7749e-08, 0.0187309, -0.499649, 0, 0.499649, 0.0187309, 0.5, -1.41414e-09, 3.77224e-08, 0, 0, 0)
+visible = false
 progress = 1.74935
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Marker6"]
@@ -88,6 +94,7 @@ mesh = SubResource("BoxMesh_826xl")
 
 [node name="Marker7" type="PathFollow3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+visible = false
 progress = 2.09922
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Marker7"]
@@ -95,6 +102,7 @@ mesh = SubResource("BoxMesh_826xl")
 
 [node name="Marker8" type="PathFollow3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+visible = false
 progress = 2.44909
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Marker8"]
@@ -102,6 +110,7 @@ mesh = SubResource("BoxMesh_826xl")
 
 [node name="Marker9" type="PathFollow3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+visible = false
 progress = 2.79896
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Marker9"]
@@ -109,6 +118,7 @@ mesh = SubResource("BoxMesh_826xl")
 
 [node name="Marker10" type="PathFollow3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+visible = false
 progress = 3.14883
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Marker10"]
@@ -116,6 +126,7 @@ mesh = SubResource("BoxMesh_826xl")
 
 [node name="Marker11" type="PathFollow3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+visible = false
 progress = 3.40185
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Marker11"]

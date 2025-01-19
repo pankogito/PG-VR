@@ -49,7 +49,7 @@ func _process(delta: float) -> void:
 	var offset = curve.get_closest_offset(to_local(hand.handle_position.global_position))
 	handle.progress_ratio = offset / curve.get_baked_length()
 	progress_change.emit(handle.progress_ratio)
-	vibration = streach_ratio*(handle.global_position - hand.global_position).length()
+	vibration = streach_ratio*(handle.global_position - hand.handle_position.global_position).length()
 	
 	vibration += jump_ratio*(handle.global_position - prevoius_positon).length()
 	
@@ -61,7 +61,6 @@ func _process(delta: float) -> void:
 	
 	vibration += twist_ratio * hand_test.cross(handle_test).length()
 	
-	hand.get_node("Label3D").text = "%1.3f" %  vibration
 	
 	vibration = vibration-vibration_start
 	

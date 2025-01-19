@@ -77,10 +77,10 @@ visible = false
 visible = false
 
 [node name="WheelManipulator" parent="station/SteeringConsole" index="7" instance=ExtResource("4_p5abw")]
-transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, -0.7, 0.91547, -0.2)
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, -0.7, 0.915, -0.2)
 
 [node name="WheelManipulator2" parent="station/SteeringConsole" index="8" instance=ExtResource("4_p5abw")]
-transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, -0.7, 0.91547, 0.2)
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, -0.7, 0.915, 0.2)
 
 [node name="LewerManipulator" parent="station/SteeringConsole" index="9" instance=ExtResource("5_21x88")]
 transform = Transform3D(0.549525, 0.444997, -0.707107, -0.629321, 0.777146, 2.31608e-08, 0.549525, 0.444997, 0.707107, -0.47646, 1.01189, -0.57548)

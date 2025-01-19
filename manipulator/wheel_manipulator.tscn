@@ -48,10 +48,11 @@ shadow_mesh = SubResource("ArrayMesh_qs7a2")
 curve = SubResource("Curve3D_hm5sr")
 script = ExtResource("2_31nkf")
 handle_visualization = NodePath("Handwheel")
-vibration_start = 0.01
+vibration_start = 0.015
+twist_ratio = 0.0
 
 [node name="Handle" parent="." index="0"]
-transform = Transform3D(-0.999995, 0, -8.74196e-08, 0, 0.999969, 0, 8.74223e-08, 0, -0.999964, 0.17, 0.1, 9.31323e-10)
+transform = Transform3D(-0.999995, 0, -1.18331e-05, 0, 0.999969, 0, 1.18334e-05, 0, -0.999964, 0.17, 0.1, -1.25123e-06)
 progress = 1.07897
 
 [node name="Marker" parent="." index="1"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dr7u40o62tpwn"]
+[gd_scene load_steps=10 format=3 uid="uid://dr7u40o62tpwn"]
 
 [ext_resource type="Script" path="res://tests/test_env.gd" id="1_u2mqd"]
 [ext_resource type="Script" path="res://tests/my_camera.gd" id="2_1tgf8"]
 [ext_resource type="PackedScene" uid="uid://d4atuo3dhdk7m" path="res://package/package.tscn" id="2_eyg4w"]
+[ext_resource type="PackedScene" uid="uid://c44y4m3422udj" path="res://house/house_with_area.tscn" id="2_wtbav"]
 [ext_resource type="PackedScene" uid="uid://cmwhljoef4cey" path="res://cleaner/cleaner.tscn" id="5_g8yax"]
 [ext_resource type="PackedScene" uid="uid://dld8lak54g2yf" path="res://island_manager/island_manager.tscn" id="6_038mf"]
 
@@ -18,13 +19,17 @@ sky = SubResource("Sky_pi501")
 [node name="TestEnv" type="Node3D"]
 script = ExtResource("1_u2mqd")
 
+[node name="House" parent="." instance=ExtResource("2_wtbav")]
+
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.954813, 0.0992298, -0.280154, 4.20403e-10, 0.942618, 0.333873, 0.297208, 0.318786, -0.900024, 1.73699, 0.122474, -6.25496)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3700, 0)
 current = true
+fov = 1.0
+near = 10.0
 script = ExtResource("2_1tgf8")
 
 [node name="Package" parent="." instance=ExtResource("2_eyg4w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71732, 0, -0.0510064)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.71732, 3.18593, 6.25992)
 gravity_scale = 0.6
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -34,6 +39,5 @@ environment = SubResource("Environment_ufd82")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
 
 [node name="IslandManager" parent="." instance=ExtResource("6_038mf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.868, 0, 14.373)
 
 [connection signal="house_finished_track" from="IslandManager" to="." method="_on_island_manager_house_finished_track"]

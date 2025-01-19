@@ -7,7 +7,6 @@ func _ready() -> void:
 	$Camera3D.current = true
 	$IslandManager.generate_house()
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -23,5 +22,4 @@ func _on_island_manager_house_finished_track(house: House) -> void:
 	# Wait for the timer to timeout
 	await timer.timeout
 	timer.queue_free()
-	$IslandManager.generate_house()
 	$IslandManager.generate_house()

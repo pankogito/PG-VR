@@ -9,9 +9,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_up"):
-		translate(Vector3(0, 0, -speed * delta))
+		translate(Vector3(0, speed * delta, 0))
 	if Input.is_action_pressed("ui_down"):
-		translate(Vector3(0, 0, speed * delta))
+		translate(Vector3(0, - speed * delta, 0))
 	if Input.is_action_pressed("ui_left"):
 		translate(Vector3(-speed * delta, 0, 0))
 	if Input.is_action_pressed("ui_right"):

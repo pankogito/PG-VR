@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b3qxvtlvih15v"]
+
+[resource]
+resource_name = "ConfettiBlue"
+cull_mode = 2
+albedo_color = Color(0.114069, 0.874153, 0.90705, 1)
+metallic = 1.0
+roughness = 0.149741

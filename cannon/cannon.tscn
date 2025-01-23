@@ -559,22 +559,15 @@ transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, -0.108531,
 transform = Transform3D(0.549525, 0.444997, -0.707107, -0.629321, 0.777146, 2.31608e-08, 0.549525, 0.444997, 0.707107, -0.47646, 1.01189, -0.57548)
 reset_speed = 0.5
 
-[node name="LoadPlatform" parent="station/CannonPillar" index="2"]
-surface_material_override/0 = null
-
 [node name="PushPackageButton" parent="station/CannonPillar" index="3"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -0.25, 0.86, 0)
 mesh = SubResource("ArrayMesh_7vbun")
-
-[node name="PushPlatform" parent="station/CannonPillar" index="4"]
-surface_material_override/0 = null
 
 [node name="CurvedPipeVertical" parent="station" index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, 0.6)
 mesh = SubResource("ArrayMesh_vr3bo")
 
 [node name="Doors" parent="station" index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05, 0.8, 0.975)
 mesh = SubResource("ArrayMesh_ld8md")
 
 [node name="DoorsHandwheel" parent="station/Doors" index="0"]
@@ -582,7 +575,6 @@ transform = Transform3D(-0.75, -5.66234e-08, -5.66234e-08, 5.66234e-08, 0, -0.75
 mesh = SubResource("ArrayMesh_vhnxa")
 
 [node name="CurvedPipeHorizontal" parent="station" index="7"]
-transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 1, 2.15, 0.6)
 mesh = SubResource("ArrayMesh_vr3bo")
 
 [node name="LaunchHandle" parent="station" index="8"]
@@ -611,7 +603,6 @@ transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 1.1, 0.775, 0.575)
 mesh = SubResource("ArrayMesh_xh8ow")
 
 [node name="Grate" parent="station" index="14"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.475, 0.525)
 mesh = SubResource("ArrayMesh_sm00u")
 
 [node name="Cannon" parent="station" index="15"]
@@ -620,7 +611,6 @@ visible = false
 mesh = SubResource("ArrayMesh_6sq5i")
 
 [node name="Screen" parent="station" index="16"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 visible = false
 mesh = SubResource("ArrayMesh_uqhb2")
 

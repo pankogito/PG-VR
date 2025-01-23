@@ -40,11 +40,11 @@ func fire():
 	# create tween animation
 	var tween = create_tween()
 	var t = 2*4/initial_velocity
-	
+	package.shot_particles(true)
 	# request package movement to shot positon
-	tween.tween_interval(t)
+	tween.tween_property(package,"global_position",final_marker.global_position,t).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	await tween.finished
-	
+	package.shot_particles(false)
 	# remove package from cannon
 	package.get_parent().remove_child(package)
 	get_parent().add_child(package)
@@ -54,7 +54,6 @@ func fire():
 	var v:Vector3 = final_marker.global_position - start_marker.global_position
 	package.linear_velocity = initial_velocity*v.normalized()
 	package.freeze = false
-	
 	package = null
 
 # set yaw to given ratio between limits

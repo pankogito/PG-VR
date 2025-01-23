@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bthfpxcsvoydj"]
+[gd_scene load_steps=12 format=3 uid="uid://bthfpxcsvoydj"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_gjslt"]
 [ext_resource type="PackedScene" uid="uid://bdw46gq7ee6oo" path="res://player/hand/hand.tscn" id="2_8d31w"]
@@ -6,9 +6,28 @@
 [ext_resource type="PackedScene" uid="uid://dck61c5g2nq66" path="res://cannon/cannon.tscn" id="4_yc44v"]
 [ext_resource type="PackedScene" uid="uid://dld8lak54g2yf" path="res://island_manager/island_manager.tscn" id="8_0orjv"]
 
+[sub_resource type="Gradient" id="Gradient_j0u3u"]
+offsets = PackedFloat32Array(0, 0.994885, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.59335, 0.59335, 0.59335, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_73l2m"]
+noise_type = 0
+frequency = 0.0166
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lhyw8"]
+seamless = true
+color_ramp = SubResource("Gradient_j0u3u")
+noise = SubResource("FastNoiseLite_73l2m")
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uunoj"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_top_color = Color(0.234307, 0.451165, 0.732553, 1)
+sky_horizon_color = Color(0.6399, 0.697438, 0.79, 1)
+sky_curve = 0.0416089
+sky_cover = SubResource("NoiseTexture2D_lhyw8")
+sky_cover_modulate = Color(1, 0.98, 0.98, 1)
+ground_bottom_color = Color(0.0021, 0.08526, 0.21, 1)
+ground_horizon_color = Color(0.6399, 0.697438, 0.79, 1)
+ground_curve = 0.00965934
 
 [sub_resource type="Sky" id="Sky_wygok"]
 sky_material = SubResource("ProceduralSkyMaterial_uunoj")
@@ -16,7 +35,12 @@ sky_material = SubResource("ProceduralSkyMaterial_uunoj")
 [sub_resource type="Environment" id="Environment_etb5x"]
 background_mode = 2
 sky = SubResource("Sky_wygok")
-tonemap_mode = 2
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.87
+fog_mode = 1
+fog_density = 1.0
+fog_aerial_perspective = 1.0
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_gjslt")
@@ -46,5 +70,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 
 [node name="IslandManager" parent="." instance=ExtResource("8_0orjv")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+r1 = 15
 r2 = 240
+minimal_progress_stop = 0.9
 angle = 1.3

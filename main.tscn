@@ -1,12 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bthfpxcsvoydj"]
+[gd_scene load_steps=9 format=3 uid="uid://bthfpxcsvoydj"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_gjslt"]
 [ext_resource type="PackedScene" uid="uid://bdw46gq7ee6oo" path="res://player/hand/hand.tscn" id="2_8d31w"]
 [ext_resource type="PackedScene" uid="uid://cmwhljoef4cey" path="res://cleaner/cleaner.tscn" id="4_dylhh"]
-[ext_resource type="PackedScene" uid="uid://cs66jlh2aur4p" path="res://house/house.tscn" id="4_qavfu"]
 [ext_resource type="PackedScene" uid="uid://dck61c5g2nq66" path="res://cannon/cannon.tscn" id="4_yc44v"]
-[ext_resource type="PackedScene" uid="uid://c44y4m3422udj" path="res://house/house_with_area.tscn" id="5_h5o86"]
-[ext_resource type="PackedScene" uid="uid://tgmwhkhrlcve" path="res://house/house_with_colisions.tscn" id="6_jufsq"]
+[ext_resource type="PackedScene" uid="uid://dld8lak54g2yf" path="res://island_manager/island_manager.tscn" id="8_0orjv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uunoj"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -25,6 +23,7 @@ script = ExtResource("1_gjslt")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+visible = false
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -42,14 +41,10 @@ tracker = &"right_hand"
 
 [node name="Cannon" parent="XROrigin3D" instance=ExtResource("4_yc44v")]
 
-[node name="House" parent="." instance=ExtResource("4_qavfu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -18.6584)
-
-[node name="House2" parent="." instance=ExtResource("5_h5o86")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.869139, 1.19209e-06, -27.8281)
-
-[node name="House3" parent="." instance=ExtResource("6_jufsq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6921, 0, -12.3846)
-
 [node name="Cleaner" parent="." instance=ExtResource("4_dylhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+
+[node name="IslandManager" parent="." instance=ExtResource("8_0orjv")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+r2 = 240
+angle = 1.3

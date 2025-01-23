@@ -4,6 +4,7 @@ class_name IslandManager
 @export var number_of_paths:int = 5
 @export var r1:int = 25
 @export var r2:int = 80
+@export var minimal_progress_stop = 0.8
 @export var angle:float = PI / 2
 @export var scene_path:String = "res://house/house_with_area.tscn"
 
@@ -36,13 +37,13 @@ func add_house(path: Path3D) -> void:
 		# Connect the signal from the instance to a function in IslandManager
 		instance.package_arrived.connect(_on_house_signal.bind(path_follow))
 		
-		var path_length = abs(r1 - r2)
+		var path_length = path.curve.get_baked_length()
 		var duration = path_length / instance.speed
 		
 		
 		# Create a Tween to animate the progress_ratio
 		var tween = create_tween()
-		tween.tween_property(path_follow, "progress_ratio", 1.0, duration)
+		tween.tween_property(path_follow, "progress_ratio", randf_range(minimal_progress_stop,1.0), duration)
 		tween.tween_interval(10.0)
 		tween.tween_property(path_follow, "progress_ratio", 0.0, duration)
 		tween.tween_callback(path_follow.queue_free)
@@ -59,7 +60,7 @@ func _on_house_signal(instance,path_follow):
 		
 		var new_tween = create_tween()
 		new_tween.tween_property(path_follow, "progress_ratio", 0.0,path_follow.progress_ratio * 5)
-		tween.tween_callback(path_follow.queue_free)
+		new_tween.tween_callback(path_follow.queue_free)
 		new_tween.tween_callback(house_finished_track.emit.bind(instance))
 
 # Function to add a new house to the track with the least children
@@ -68,9 +69,7 @@ func generate_house() -> void:
 	var tracks_with_min_children = []
 	
 	# Find the track(s) with the least children
-	for i in range(number_of_paths):
-		var path = get_node("Track_" + str(i))
-		if path:
+	for path in get_children():
 			var child_count = path.get_child_count()
 			if min_children == null or child_count < min_children:
 				min_children = child_count

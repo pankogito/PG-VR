@@ -55,6 +55,12 @@ twist_ratio = 0.0
 transform = Transform3D(-0.999995, 0, -1.18331e-05, 0, 0.999969, 0, 1.18334e-05, 0, -0.999964, 0.17, 0.1, -1.25123e-06)
 progress = 1.07897
 
+[node name="MeshInstance3D" parent="Handle" index="0"]
+visible = false
+
+[node name="RotationTest" parent="Handle" index="1"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+
 [node name="Marker" parent="." index="1"]
 transform = Transform3D(-0.5, 0, -4.37113e-08, 0, 0.499999, 0, 4.37114e-08, 0, -0.499999, 0.17, 0.1, 0)
 

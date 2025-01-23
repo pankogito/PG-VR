@@ -1,134 +1,135 @@
-[gd_scene load_steps=32 format=3 uid="uid://88035g1gf3ch"]
+[gd_scene load_steps=33 format=3 uid="uid://cauj6e521htnu"]
 
-[ext_resource type="PackedScene" uid="uid://bsjtvtimipb3u" path="res://station/station.glb" id="1_hv2jq"]
-[ext_resource type="Material" uid="uid://d1lt3i6pnesd" path="res://station/materials/steeringconsole.tres" id="2_6n2yw"]
-[ext_resource type="Material" uid="uid://22t0q5ge2l8n" path="res://station/materials/screen.tres" id="3_gxia5"]
-[ext_resource type="Material" uid="uid://bg1pyik00ut31" path="res://station/materials/displaybutton.tres" id="3_meunl"]
-[ext_resource type="Material" uid="uid://daajhjm37bdvf" path="res://station/materials/rightarrowbutton.tres" id="4_20y0v"]
-[ext_resource type="Material" uid="uid://cackn6amcfmkl" path="res://station/materials/drawer.tres" id="4_bwfnl"]
-[ext_resource type="Material" uid="uid://dmt6r6o5hhwie" path="res://station/materials/leftarrowbutton.tres" id="4_flquy"]
-[ext_resource type="Material" uid="uid://dap5kgohecxxf" path="res://station/materials/okbutton.tres" id="5_gcehk"]
-[ext_resource type="Material" uid="uid://c33lp3dqjtm6e" path="res://station/materials/handwheel.tres" id="5_tp3j5"]
-[ext_resource type="Material" uid="uid://bdd5e616aj3c1" path="res://station/materials/powerlever.tres" id="6_mvaf8"]
-[ext_resource type="Material" uid="uid://c3up7f6ibgi3h" path="res://station/materials/cabin.tres" id="7_d0dhl"]
-[ext_resource type="Material" uid="uid://ck87tfrtmvb4c" path="res://station/materials/skirt.tres" id="8_r5dwg"]
-[ext_resource type="Material" uid="uid://c30ors0niuhel" path="res://station/materials/lightsource.tres" id="8_xrf23"]
-[ext_resource type="Material" uid="uid://gu8ojiw3fpm3" path="res://station/materials/bench.tres" id="9_bywth"]
-[ext_resource type="Material" uid="uid://dlquss53bm85t" path="res://station/materials/dispenser.tres" id="10_vs0al"]
-[ext_resource type="Material" uid="uid://d1dttrybjcelg" path="res://station/materials/cannonpillar.tres" id="11_pn4xe"]
-[ext_resource type="Material" uid="uid://hq56bmcyvtgq" path="res://station/materials/cover.tres" id="12_2objp"]
-[ext_resource type="Material" uid="uid://hgrp7wefwvnt" path="res://station/materials/loadingbar.tres" id="13_0lfoo"]
-[ext_resource type="Material" uid="uid://02smq3pducyl" path="res://station/materials/platform.tres" id="14_c1ymd"]
-[ext_resource type="Material" uid="uid://030xg5njmnv6" path="res://station/materials/squarebutton.tres" id="15_m4s0a"]
-[ext_resource type="Material" uid="uid://bk8evo7627iyj" path="res://station/materials/pipe.tres" id="16_mycir"]
-[ext_resource type="Material" uid="uid://hl28leaimf61" path="res://station/materials/doors.tres" id="17_vhf3q"]
-[ext_resource type="Material" uid="uid://dq81f04e2jgw4" path="res://station/materials/launchhandle.tres" id="18_ay7gq"]
-[ext_resource type="Material" uid="uid://bxgtvwpt2bdx4" path="res://station/materials/packagel.tres" id="19_u8y7u"]
-[ext_resource type="Material" uid="uid://sf4t060avcxf" path="res://station/materials/packagem.tres" id="20_b5k5r"]
-[ext_resource type="Material" uid="uid://cqhewogf6rjnn" path="res://station/materials/loadbutton.tres" id="20_ko80v"]
-[ext_resource type="Material" uid="uid://cn7hk1een7sfm" path="res://station/materials/packages.tres" id="21_xmnia"]
-[ext_resource type="Material" uid="uid://d1mt1ewj7s36g" path="res://station/materials/packagexs.tres" id="22_0oqov"]
-[ext_resource type="Material" uid="uid://d0q4kolqw1ig2" path="res://station/materials/grate.tres" id="23_y8eff"]
-[ext_resource type="Material" uid="uid://dtcl8npwkjoij" path="res://station/materials/cannon.tres" id="24_b6wx5"]
-[ext_resource type="Material" uid="uid://bgnouwphuspqk" path="res://station/materials/poster.tres" id="29_vdoc1"]
+[ext_resource type="PackedScene" uid="uid://bsjtvtimipb3u" path="res://station/station.glb" id="1_n07ma"]
+[ext_resource type="Material" uid="uid://d1lt3i6pnesd" path="res://station/materials/steeringconsole.tres" id="2_og7ck"]
+[ext_resource type="Material" uid="uid://bg1pyik00ut31" path="res://station/materials/displaybutton.tres" id="3_lgxkl"]
+[ext_resource type="Material" uid="uid://dmt6r6o5hhwie" path="res://station/materials/leftarrowbutton.tres" id="4_mk10f"]
+[ext_resource type="Material" uid="uid://dap5kgohecxxf" path="res://station/materials/okbutton.tres" id="5_g8ggo"]
+[ext_resource type="Material" uid="uid://daajhjm37bdvf" path="res://station/materials/rightarrowbutton.tres" id="6_ilhbj"]
+[ext_resource type="Material" uid="uid://cackn6amcfmkl" path="res://station/materials/drawer.tres" id="7_y0ywr"]
+[ext_resource type="Material" uid="uid://c33lp3dqjtm6e" path="res://station/materials/handwheel.tres" id="8_vuq47"]
+[ext_resource type="Material" uid="uid://c5s0awwibpx5j" path="res://station/materials/leverridge.tres" id="9_sc0qm"]
+[ext_resource type="Material" uid="uid://bdd5e616aj3c1" path="res://station/materials/powerlever.tres" id="10_lkam2"]
+[ext_resource type="Material" uid="uid://c3up7f6ibgi3h" path="res://station/materials/cabin.tres" id="11_4ghty"]
+[ext_resource type="Material" uid="uid://c30ors0niuhel" path="res://station/materials/lightsource.tres" id="12_yfcsf"]
+[ext_resource type="Material" uid="uid://ck87tfrtmvb4c" path="res://station/materials/skirt.tres" id="13_uwlyc"]
+[ext_resource type="Material" uid="uid://gu8ojiw3fpm3" path="res://station/materials/bench.tres" id="14_vtwoh"]
+[ext_resource type="Material" uid="uid://dlquss53bm85t" path="res://station/materials/dispenser.tres" id="15_25gi5"]
+[ext_resource type="Material" uid="uid://d1dttrybjcelg" path="res://station/materials/cannonpillar.tres" id="16_j1kft"]
+[ext_resource type="Material" uid="uid://hq56bmcyvtgq" path="res://station/materials/cover.tres" id="17_nvny6"]
+[ext_resource type="Material" uid="uid://hgrp7wefwvnt" path="res://station/materials/loadingbar.tres" id="18_7cxyy"]
+[ext_resource type="Material" uid="uid://030xg5njmnv6" path="res://station/materials/squarebutton.tres" id="19_depge"]
+[ext_resource type="Material" uid="uid://cqhewogf6rjnn" path="res://station/materials/loadbutton.tres" id="20_ldx3k"]
+[ext_resource type="Material" uid="uid://bk8evo7627iyj" path="res://station/materials/pipe.tres" id="21_7lpf5"]
+[ext_resource type="Material" uid="uid://hl28leaimf61" path="res://station/materials/doors.tres" id="22_pcgkp"]
+[ext_resource type="Material" uid="uid://dq81f04e2jgw4" path="res://station/materials/launchhandle.tres" id="23_j344m"]
+[ext_resource type="Material" uid="uid://bxgtvwpt2bdx4" path="res://station/materials/packagel.tres" id="24_0jru6"]
+[ext_resource type="Material" uid="uid://bgnouwphuspqk" path="res://station/materials/poster.tres" id="24_ietek"]
+[ext_resource type="Material" uid="uid://sf4t060avcxf" path="res://station/materials/packagem.tres" id="25_jbdtx"]
+[ext_resource type="Material" uid="uid://d0q4kolqw1ig2" path="res://station/materials/grate.tres" id="25_v1xdm"]
+[ext_resource type="Material" uid="uid://dtcl8npwkjoij" path="res://station/materials/cannon.tres" id="26_703vn"]
+[ext_resource type="Material" uid="uid://cn7hk1een7sfm" path="res://station/materials/packages.tres" id="26_o77xp"]
+[ext_resource type="Material" uid="uid://d1mt1ewj7s36g" path="res://station/materials/packagexs.tres" id="27_i7r18"]
+[ext_resource type="Material" uid="uid://cly4qqt5defey" path="res://station/materials/screenrim.tres" id="27_yaprs"]
+[ext_resource type="Material" uid="uid://22t0q5ge2l8n" path="res://station/materials/screen.tres" id="28_jf3bj"]
 
-[node name="station" instance=ExtResource("1_hv2jq")]
+[node name="station" instance=ExtResource("1_n07ma")]
 
 [node name="SteeringConsole" parent="." index="0"]
-surface_material_override/0 = ExtResource("2_6n2yw")
-surface_material_override/1 = ExtResource("3_gxia5")
+surface_material_override/0 = ExtResource("2_og7ck")
 
 [node name="DisplayLargeButtonLeft" parent="SteeringConsole" index="0"]
-surface_material_override/0 = ExtResource("3_meunl")
-surface_material_override/1 = ExtResource("4_flquy")
+surface_material_override/0 = ExtResource("3_lgxkl")
+surface_material_override/1 = ExtResource("4_mk10f")
 
 [node name="DisplayLargeButtonMiddle" parent="SteeringConsole" index="1"]
-surface_material_override/0 = ExtResource("3_meunl")
-surface_material_override/1 = ExtResource("5_gcehk")
+surface_material_override/0 = ExtResource("3_lgxkl")
+surface_material_override/1 = ExtResource("5_g8ggo")
 
 [node name="DisplayLargeButtonRight" parent="SteeringConsole" index="2"]
-surface_material_override/0 = ExtResource("3_meunl")
-surface_material_override/1 = ExtResource("4_20y0v")
+surface_material_override/0 = ExtResource("3_lgxkl")
+surface_material_override/1 = ExtResource("6_ilhbj")
 
 [node name="Drawer" parent="SteeringConsole" index="3"]
-surface_material_override/0 = ExtResource("4_bwfnl")
+surface_material_override/0 = ExtResource("7_y0ywr")
 
 [node name="HorizontalHandwheel" parent="SteeringConsole" index="4"]
-surface_material_override/0 = ExtResource("5_tp3j5")
+surface_material_override/0 = ExtResource("8_vuq47")
 
-[node name="PowerLever" parent="SteeringConsole" index="5"]
-surface_material_override/0 = ExtResource("6_mvaf8")
+[node name="LeverRidge" parent="SteeringConsole" index="5"]
+surface_material_override/0 = ExtResource("9_sc0qm")
+
+[node name="PowerLever" parent="SteeringConsole/LeverRidge" index="0"]
+surface_material_override/0 = ExtResource("10_lkam2")
 
 [node name="VerticalHandwheel" parent="SteeringConsole" index="6"]
-surface_material_override/0 = ExtResource("5_tp3j5")
+surface_material_override/0 = ExtResource("8_vuq47")
 
 [node name="Cabin" parent="." index="1"]
-surface_material_override/0 = ExtResource("7_d0dhl")
+surface_material_override/0 = ExtResource("11_4ghty")
 
 [node name="Lamp" parent="Cabin" index="0"]
-surface_material_override/0 = ExtResource("3_meunl")
-surface_material_override/1 = ExtResource("8_xrf23")
+surface_material_override/0 = ExtResource("3_lgxkl")
+surface_material_override/1 = ExtResource("12_yfcsf")
 
 [node name="Skirt" parent="Cabin" index="1"]
-surface_material_override/0 = ExtResource("8_r5dwg")
+surface_material_override/0 = ExtResource("13_uwlyc")
 
 [node name="Bench" parent="." index="2"]
-surface_material_override/0 = ExtResource("9_bywth")
+surface_material_override/0 = ExtResource("14_vtwoh")
 
 [node name="Dispenser" parent="." index="3"]
-surface_material_override/0 = ExtResource("10_vs0al")
+surface_material_override/0 = ExtResource("15_25gi5")
 
 [node name="CannonPillar" parent="." index="4"]
-surface_material_override/0 = ExtResource("11_pn4xe")
+surface_material_override/0 = ExtResource("16_j1kft")
 
 [node name="CannonCover" parent="CannonPillar" index="0"]
-surface_material_override/0 = ExtResource("12_2objp")
+surface_material_override/0 = ExtResource("17_nvny6")
 
 [node name="CannonLoadingBar" parent="CannonPillar" index="1"]
-surface_material_override/0 = ExtResource("13_0lfoo")
-
-[node name="LoadPlatform" parent="CannonPillar" index="2"]
-surface_material_override/0 = ExtResource("14_c1ymd")
+surface_material_override/0 = ExtResource("18_7cxyy")
 
 [node name="PushPackageButton" parent="CannonPillar" index="3"]
-surface_material_override/0 = ExtResource("15_m4s0a")
-surface_material_override/1 = ExtResource("20_ko80v")
-
-[node name="PushPlatform" parent="CannonPillar" index="4"]
-surface_material_override/0 = ExtResource("14_c1ymd")
+surface_material_override/0 = ExtResource("19_depge")
+surface_material_override/1 = ExtResource("20_ldx3k")
 
 [node name="CurvedPipeVertical" parent="." index="5"]
-surface_material_override/0 = ExtResource("16_mycir")
+surface_material_override/0 = ExtResource("21_7lpf5")
 
 [node name="Doors" parent="." index="6"]
-surface_material_override/0 = ExtResource("17_vhf3q")
+surface_material_override/0 = ExtResource("22_pcgkp")
 
 [node name="DoorsHandwheel" parent="Doors" index="0"]
-surface_material_override/0 = ExtResource("5_tp3j5")
+surface_material_override/0 = ExtResource("8_vuq47")
 
 [node name="CurvedPipeHorizontal" parent="." index="7"]
-surface_material_override/0 = ExtResource("16_mycir")
+surface_material_override/0 = ExtResource("21_7lpf5")
 
 [node name="LaunchHandle" parent="." index="8"]
-surface_material_override/0 = ExtResource("18_ay7gq")
+surface_material_override/0 = ExtResource("23_j344m")
 
 [node name="PackageL" parent="." index="9"]
-surface_material_override/0 = ExtResource("19_u8y7u")
+surface_material_override/0 = ExtResource("24_0jru6")
 
 [node name="PackageM" parent="." index="10"]
-surface_material_override/0 = ExtResource("20_b5k5r")
+surface_material_override/0 = ExtResource("25_jbdtx")
 
 [node name="PackageS" parent="." index="11"]
-surface_material_override/0 = ExtResource("21_xmnia")
+surface_material_override/0 = ExtResource("26_o77xp")
 
 [node name="PackageXS" parent="." index="12"]
-surface_material_override/0 = ExtResource("22_0oqov")
+surface_material_override/0 = ExtResource("27_i7r18")
 
 [node name="Poster" parent="." index="13"]
-surface_material_override/0 = ExtResource("29_vdoc1")
+surface_material_override/0 = ExtResource("24_ietek")
 
 [node name="Grate" parent="." index="14"]
-surface_material_override/0 = ExtResource("23_y8eff")
+surface_material_override/0 = ExtResource("25_v1xdm")
 
 [node name="Cannon" parent="." index="15"]
-surface_material_override/0 = ExtResource("24_b6wx5")
+surface_material_override/0 = ExtResource("26_703vn")
+
+[node name="Screen" parent="." index="16"]
+surface_material_override/0 = ExtResource("27_yaprs")
+surface_material_override/1 = ExtResource("28_jf3bj")

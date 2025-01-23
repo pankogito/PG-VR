@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://df747cjc0urn5"]
+
+[resource]
+resource_name = "ConfettiPink"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+metallic = 1.0
+roughness = 0.149741

@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://cly4qqt5defey"]
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://c337hl3cte02c"]
 
 [ext_resource type="Texture2D" uid="uid://brwstryjmdckd" path="res://station/textures/Screen/Screen_color.png" id="1_jewol"]
 [ext_resource type="Texture2D" uid="uid://ctbpl571vl2n5" path="res://station/textures/Screen/Screen_metallic.png" id="2_h02qn"]

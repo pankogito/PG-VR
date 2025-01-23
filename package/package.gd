@@ -16,5 +16,10 @@ func disable_shoot():
 
 func pop_visualization():
 	var v = $MeshInstance3D
+	$MeshInstance3D/GPUParticles3D.emitting = true
 	remove_child(v)
 	return v
+
+func shot_particles(emitting):
+	$GPUParticles3D2.emitting = emitting
+	$GPUParticles3D3.emitting = emitting

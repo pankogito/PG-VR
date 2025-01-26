@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckxx3mdiyp02k"]
+
+[ext_resource type="Script" path="res://point_counter/point_counter.gd" id="1_l5kgh"]
+
+[node name="PointCounter" type="Node3D"]
+script = ExtResource("1_l5kgh")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dr7u40o62tpwn"]
+[gd_scene load_steps=11 format=3 uid="uid://dr7u40o62tpwn"]
 
 [ext_resource type="Script" path="res://tests/test_env.gd" id="1_u2mqd"]
 [ext_resource type="Script" path="res://tests/my_camera.gd" id="2_1tgf8"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c44y4m3422udj" path="res://house/house_with_area.tscn" id="2_wtbav"]
 [ext_resource type="PackedScene" uid="uid://cmwhljoef4cey" path="res://cleaner/cleaner.tscn" id="5_g8yax"]
 [ext_resource type="PackedScene" uid="uid://dld8lak54g2yf" path="res://island_manager/island_manager.tscn" id="6_038mf"]
+[ext_resource type="PackedScene" uid="uid://ckxx3mdiyp02k" path="res://point_counter/point_counter.tscn" id="7_2pa7n"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rqcwv"]
 
@@ -40,4 +41,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
 
 [node name="IslandManager" parent="." instance=ExtResource("6_038mf")]
 
+[node name="PointCounter" parent="." instance=ExtResource("7_2pa7n")]
+
+[connection signal="found_package" from="Cleaner" to="PointCounter" method="_lost_package"]
+[connection signal="delivered_package" from="IslandManager" to="PointCounter" method="_package_was_delivered"]
 [connection signal="house_finished_track" from="IslandManager" to="." method="_on_island_manager_house_finished_track"]
+[connection signal="house_finished_track" from="IslandManager" to="PointCounter" method="_house_finished_track"]

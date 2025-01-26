@@ -1,5 +1,6 @@
 extends Node
 
+var counter = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,7 +10,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	counter += 1
+	if counter % 1000:
+		counter = 0
+		print($PointCounter.get_points())
 
 func _on_island_manager_house_finished_track(house: House) -> void:
 	print("House finished track on path: %s" % house.name)

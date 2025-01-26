@@ -10,11 +10,15 @@ class_name IslandManager
 
 var packed_scene
 
+
  # Dictionary to store tweens by instance
 var tweens = {}
 
 # Inform about end of track of particul house
 signal house_finished_track(house: House)
+
+# Inform if package was delivered to some house
+signal delivered_package
 
 func cal_vector(radius, local_angel):
 	return Vector3(radius * cos(local_angel), 0, radius * sin(local_angel))
@@ -62,6 +66,7 @@ func _on_house_signal(instance,path_follow):
 		new_tween.tween_property(path_follow, "progress_ratio", 0.0,path_follow.progress_ratio * 5)
 		new_tween.tween_callback(path_follow.queue_free)
 		new_tween.tween_callback(house_finished_track.emit.bind(instance))
+		delivered_package.emit()
 
 # Function to add a new house to the track with the least children
 func generate_house() -> void:

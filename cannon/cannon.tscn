@@ -412,7 +412,7 @@ shadow_mesh = SubResource("ArrayMesh_vyxwn")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ww86u"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_vh6v6"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_46muv"]
 _surfaces = [{
 "aabb": AABB(-2.05, -0.288712, -0.288712, 2.05, 0.577425, 0.577425),
 "format": 34896613377,
@@ -440,13 +440,13 @@ _surfaces = [{
 "vertex_data": PackedByteArray("PgbPnzMz8PQ+BszML2AR3z4GzMzPnzPNPgbPn8zMAsM+Bi9gzMztwz4GMzPPnxvPPgYzMy9gheA+BjMzL2Ct3D4GL2AzM6bzjsFl5mmql8iOwWXmaapi147BlVVl5guljsGVVWXmQcKOwZkZlVX33o7BmRmVVUrOjsGZGZVVI9eOwZkZlVWD0I7BlVWZGcrqjsGVVZkZdOf///7/+kr/////BLUAAP/////+/wS1/////wS1/v//////+kr+//////8AAAS1/////wAA+kr/////AAD6Sv/////6SgAA///EyP//+ko588TI///6SpPgjsFl5pVV8t2OwWXmlVVq68TI//8EtXv3xMj//wS18cnEyAS1/v8C/cTIBLX+/1+xjsFpqmXmRLGOwWmqZeZmyMTI+kr//wL9xMj6Sv//PqPEyAAABLV798TIAAAEtS6yjsGZGWmqbrOOwZkZaaojx8TIAAD6SjnzxMgAAPpKOfPEyAAA+kr24cTIAAD6StDOxMj6SgAA2u+OwWmqmRnK6o7BaaqZGT3+xMgEtQAA2u8AAM+fMzNc9AAAzMwvYIfeAADMzM+fyMwAAM+fzMzWwgAAL2DMzBTEAAAzM8+fg88AADMzL2Du4AAAMzMvYFrdAAAvYDMzOPTjxxM8JNEZMRHcECWo7qISURO07zQmON53MoLTeC68zDQ4t8K6lEa2P+qwLsdUCJ3f2f/6C0j27fkr/aaBQefd+jj2yJ1lE/ZJQlK+/3+6zP9/wur/f0Sz/388lf9/wmr/f7pMRLP//7pM//88lf//5XZFx4mWUMT0k0PHy9vVM9Zy/q27l4OyZW5QkvGIeaj1hPSu1Pw/263tZe41UziW/9HW8m8pY5h4MKmcEDat6bm45Pa5uOT2ZkXi63Ima6ZHacn864md5ZRHTbA1g0bpfsdCPJ7Q9zBj25oksu20EWASxO6LJbvdzjEV0xou6MzQN+rC")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_vh6v6")
+shadow_mesh = SubResource("ArrayMesh_46muv")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_868t4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0knj7"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_ahfeq"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_1gu0a"]
 _surfaces = [{
 "aabb": AABB(-0.331883, 0.859037, -0.984745, 0.814277, 0.182712, 0.293485),
 "format": 34896613377,
@@ -494,7 +494,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("/v/9/wAAsqoAAP//AACyqgAAAQD//7Kq//8AAP7/sqr///9/////f////3////9/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_ahfeq")
+shadow_mesh = SubResource("ArrayMesh_1gu0a")
 
 [node name="Cannon" type="Node3D" node_paths=PackedStringArray("barrel")]
 script = ExtResource("1_j3q04")

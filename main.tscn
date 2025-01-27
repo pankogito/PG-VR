@@ -1,11 +1,46 @@
-[gd_scene load_steps=13 format=3 uid="uid://bthfpxcsvoydj"]
+[gd_scene load_steps=19 format=4 uid="uid://bthfpxcsvoydj"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_gjslt"]
 [ext_resource type="PackedScene" uid="uid://bdw46gq7ee6oo" path="res://player/hand/hand.tscn" id="2_8d31w"]
 [ext_resource type="PackedScene" uid="uid://ckxx3mdiyp02k" path="res://point_counter/point_counter.tscn" id="2_48ol5"]
+[ext_resource type="Material" uid="uid://dtcl8npwkjoij" path="res://station/materials/cannon.tres" id="4_1jy43"]
 [ext_resource type="PackedScene" uid="uid://cmwhljoef4cey" path="res://cleaner/cleaner.tscn" id="4_dylhh"]
 [ext_resource type="PackedScene" uid="uid://dck61c5g2nq66" path="res://cannon/cannon.tscn" id="4_yc44v"]
+[ext_resource type="PackedScene" uid="uid://c3stfgj4tqc3i" path="res://ui/screen.tscn" id="5_7vqw7"]
+[ext_resource type="PackedScene" uid="uid://bj7od120y0hmw" path="res://manipulator/lever_manipulator.tscn" id="5_pqlfe"]
 [ext_resource type="PackedScene" uid="uid://dld8lak54g2yf" path="res://island_manager/island_manager.tscn" id="8_0orjv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ww86u"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vh6v6"]
+_surfaces = [{
+"aabb": AABB(-2.05, -0.288712, -0.288712, 2.05, 0.577425, 0.577425),
+"format": 34896613377,
+"index_count": 192,
+"index_data": PackedByteArray("BwAeAAAABwALAB4ABgALAAcABgAKAAsABQAKAAYABQAbAAoABAAbAAUABAAJABsADQAUAB8ADQAMABQAAwAJAAQAAwAYAAkAEgAdABwAEgATAB0AAgAYAAMAAgAIABgAAQAIAAIAAQAVAAgAEAAaABkAEAARABoAAAAVAAEAAAAeABUADwAZABcADwAQABkADAAWABQADAAOABYAEQAcABoAEQASABwAEwAfAB0AEwANAB8ADgAXABYADgAPABcACwAfAB4ACwAdAB8ACgAdAAsACgAcAB0AGwAcAAoAGwAaABwACQAaABsACQAZABoAGAAZAAkAGAAXABkACAAXABgACAAWABcAFQAWAAgAFQAUABYAHgAUABUAHgAfABQABwAmAAYABwAnACYABQAkAAQABQAlACQABAAjAAMABAAkACMAAwAiAAIAAwAjACIAAQAgAAAAAQAhACAABgAlAAUABgAmACUAAgAhAAEAAgAiACEAAAAnAAcAAAAgACcA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 40,
+"vertex_data": PackedByteArray("PgbPnzMzAAA+BszML2AAAD4GzMzPnwAAPgbPn8zMAAA+Bi9gzMwAAD4GMzPPnwAAPgYzMy9gAAA+Bi9gMzMAAI7BZeZpqgAAjsGVVWXmAACOwZkZlVUAAI7BlVWZGQAA///+//pKAAD//wS1AAAAAP///v8EtQAA//8Etf7/AAD///pK/v8AAP//AAAEtQAA//8AAPpKAAD///pKAAAAAMTI///6SgAAjsFl5pVVAADEyP//BLUAAMTIBLX+/wAAjsFpqmXmAADEyPpK//8AAMTIAAAEtQAAjsGZGWmqAADEyAAA+koAAMTI+koAAAAAjsFpqpkZAADEyAS1AAAAAAAAz58zMwAAAADMzC9gAAAAAMzMz58AAAAAz5/MzAAAAAAvYMzMAAAAADMzz58AAAAAMzMvYAAAAAAvYDMzAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uu8r2"]
+resource_name = "station_Cannon"
+_surfaces = [{
+"aabb": AABB(-2.05, -0.288712, -0.288712, 2.05, 0.577425, 0.577425),
+"attribute_data": PackedByteArray("ytR4dZvHEXZrukR2PK0QdhKgd3Xykn504YU/cxTvRHP24YN0V0lQwGe6///+ZyPOjZfl/mw5qPY+aMPv1XSk+///uvv4L+fnp+6a/QAAS74AADLUAABlqAAAf5IAAJh8AACyZgAAzFAAAP//AAAY6n4oS75PNMHBbDmix9fLvP9+KGWoNEibuH4of5LlXaK7sVq8wviot/9+KJh8hW7iyX4osmbVdNveC23q3iqGiv1+KMxQfij+/080ifzVbuvzfigY6vgvYtZD3fD+figy1IPU53B2x4Fxarq0cV6tgXFWoOpwU5P1b1CGtm6m7rZulOHxbw=="),
+"format": 34896613399,
+"index_count": 192,
+"index_data": PackedByteArray("CAAyAAAACAASADIABwASAAgABwAQABIABQAPAAYABQArAA8ABAArAAUABAAMACsAFAAcADMAFAATABwAAwAMAAQAAwAlAAwAGgAwAC0AGgAbADAAAgAlAAMAAgAKACUAAQAKAAIAAQAfAAoAFwAoACYAFwAYACgAAAAfAAEAAAAyAB8AFgAmACIAFgAXACYAEwAgABwAEwAVACAAGAAsACgAGAAZACwAGwAzADAAGwAUADMAFQAiACAAFQAWACIAEQAzADEAEQAwADMADQAwABEADQAuADAAKgAvAA4AKgApAC8ACwApACoACwAnACkAJAAnAAsAJAAjACcACQAjACQACQAhACMAHgAhAAkAHgAdACEAMQAdAB4AMQAzAB0ACAA7AAcACAA8ADsABQA4AAQABQA5ADgABAA3AAMABAA4ADcAAwA2AAIAAwA3ADYAAQA0AAAAAQA1ADQABgA5AAUABgA6ADkAAgA1AAEAAgA2ADUAAAA8AAgAAAA0ADwA"),
+"material": SubResource("StandardMaterial3D_ww86u"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 61,
+"vertex_data": PackedByteArray("PgbPnzMz8PQ+BszML2AR3z4GzMzPnzPNPgbPn8zMAsM+Bi9gzMztwz4GMzPPnxvPPgYzMy9gheA+BjMzL2Ct3D4GL2AzM6bzjsFl5mmql8iOwWXmaapi147BlVVl5guljsGVVWXmQcKOwZkZlVX33o7BmRmVVUrOjsGZGZVVI9eOwZkZlVWD0I7BlVWZGcrqjsGVVZkZdOf///7/+kr/////BLUAAP/////+/wS1/////wS1/v//////+kr+//////8AAAS1/////wAA+kr/////AAD6Sv/////6SgAA///EyP//+ko588TI///6SpPgjsFl5pVV8t2OwWXmlVVq68TI//8EtXv3xMj//wS18cnEyAS1/v8C/cTIBLX+/1+xjsFpqmXmRLGOwWmqZeZmyMTI+kr//wL9xMj6Sv//PqPEyAAABLV798TIAAAEtS6yjsGZGWmqbrOOwZkZaaojx8TIAAD6SjnzxMgAAPpKOfPEyAAA+kr24cTIAAD6StDOxMj6SgAA2u+OwWmqmRnK6o7BaaqZGT3+xMgEtQAA2u8AAM+fMzNc9AAAzMwvYIfeAADMzM+fyMwAAM+fzMzWwgAAL2DMzBTEAAAzM8+fg88AADMzL2Du4AAAMzMvYFrdAAAvYDMzOPTjxxM8JNEZMRHcECWo7qISURO07zQmON53MoLTeC68zDQ4t8K6lEa2P+qwLsdUCJ3f2f/6C0j27fkr/aaBQefd+jj2yJ1lE/ZJQlK+/3+6zP9/wur/f0Sz/388lf9/wmr/f7pMRLP//7pM//88lf//5XZFx4mWUMT0k0PHy9vVM9Zy/q27l4OyZW5QkvGIeaj1hPSu1Pw/263tZe41UziW/9HW8m8pY5h4MKmcEDat6bm45Pa5uOT2ZkXi63Ima6ZHacn864md5ZRHTbA1g0bpfsdCPJ7Q9zBj25oksu20EWASxO6LJbvdzjEV0xou6MzQN+rC")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_vh6v6")
 
 [sub_resource type="Gradient" id="Gradient_j0u3u"]
 offsets = PackedFloat32Array(0, 0.994885, 1)
@@ -47,11 +82,58 @@ fog_aerial_perspective = 1.0
 script = ExtResource("1_gjslt")
 
 [node name="PointCounter" parent="." instance=ExtResource("2_48ol5")]
+transform = Transform3D(-2.18557e-08, 0.866025, 0.5, 3.78552e-08, 0.5, -0.866025, -1, 9.1951e-16, -4.37114e-08, -1.6, 1.173, 0)
+cost_of_lost_package = -100
+cost_of_runaway_house = -500
+profit_of_parcel_delivery = 500
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-visible = false
-shadow_enabled = true
+[node name="IslandScreen" parent="." instance=ExtResource("5_7vqw7")]
+transform = Transform3D(1, 0, 0, 0, 0.5, -0.866025, 0, 0.866025, 0.5, 0, 1.173, -1.6)
+
+[node name="Cannon" type="MeshInstance3D" parent="IslandScreen"]
+transform = Transform3D(1, 0, 0, 0, 0.25, 7.45058e-09, 0, 0, 0.25, 1.935, -0.103538, -0.00577807)
+mesh = SubResource("ArrayMesh_uu8r2")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("4_1jy43")
+
+[node name="Balance" parent="." instance=ExtResource("5_7vqw7")]
+transform = Transform3D(-4.37114e-08, 0.866025, 0.5, 0, 0.5, -0.866025, -1, -3.78552e-08, -2.18557e-08, -1.6, 1.173, 0)
+
+[node name="Cannon" type="MeshInstance3D" parent="Balance"]
+transform = Transform3D(-1, 0, 0, 0, 0.25, 2.18557e-08, 0, -2.18557e-08, 0.25, -1.98105, -0.103539, -0.00577819)
+mesh = SubResource("ArrayMesh_uu8r2")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("4_1jy43")
+
+[node name="Result" parent="." instance=ExtResource("5_7vqw7")]
+transform = Transform3D(1.41421, 1.22474, 0.707107, 0, 1, -1.73205, -1.41421, 1.22474, 0.707107, 0, 3, 0)
+
+[node name="Screen" parent="Result" index="0"]
+transform = Transform3D(0.75, 0, 0, 0, 1, 0, 0, 0, 1, -0.075, -0.963, 0.854)
+
+[node name="Label3D" parent="Result" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.525501, 0.850792, 0, -0.850792, 0.525501, 0, -0.00346112, 0.0206552)
+pixel_size = 0.001
+
+[node name="Cannon" type="MeshInstance3D" parent="Result"]
+transform = Transform3D(0, 0, 0.125, 0.469246, 0.0431623, 3.72529e-09, -0.172649, 0.117312, -3.72529e-09, -0.0216376, 0.837176, -0.455066)
+mesh = SubResource("ArrayMesh_uu8r2")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("4_1jy43")
+
+[node name="Reset" parent="." instance=ExtResource("5_7vqw7")]
+transform = Transform3D(-3.27835e-08, 0.866025, 0.5, 0, 0.5, -0.866025, -0.75, -3.78552e-08, -2.18557e-08, -0.49263, 0.595796, 0.165438)
+
+[node name="Screen" parent="Reset" index="0"]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, -0.038, -0.963, 0.854)
+
+[node name="Label3D" parent="Reset" index="1"]
+text = "RESET
+"
+
+[node name="Manipulator" parent="Reset" instance=ExtResource("5_pqlfe")]
+transform = Transform3D(1, -5.58922e-09, 1.70317e-08, 1.19553e-08, 0.915915, -0.401372, -1.33563e-08, 0.401372, 0.915915, 0.404742, 0.102154, 0.0589787)
+reset_speed = 5.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_etb5x")
@@ -72,12 +154,17 @@ tracker = &"right_hand"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 
 [node name="IslandManager" parent="." instance=ExtResource("8_0orjv")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 0, 0, 0)
 r1 = 15
 r2 = 240
 minimal_progress_stop = 0.9
-angle = 1.3
+angle = 1.047
 
+[connection signal="update" from="PointCounter" to="." method="_on_point_counter_update"]
+[connection signal="progress_change" from="Reset/Manipulator" to="." method="_on_manipulator_progress_change"]
 [connection signal="found_package" from="Cleaner" to="PointCounter" method="_lost_package"]
 [connection signal="delivered_package" from="IslandManager" to="PointCounter" method="_package_was_delivered"]
 [connection signal="house_finished_track" from="IslandManager" to="PointCounter" method="_house_finished_track"]
+
+[editable path="Result"]
+[editable path="Reset"]

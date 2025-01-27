@@ -1,40 +1,11 @@
-[gd_scene load_steps=53 format=4 uid="uid://dck61c5g2nq66"]
+[gd_scene load_steps=48 format=4 uid="uid://dck61c5g2nq66"]
 
 [ext_resource type="Script" path="res://cannon/cannon.gd" id="1_j3q04"]
-[ext_resource type="PackedScene" uid="uid://bogm8c0tdvk4x" path="res://manipulator/manipulator.tscn" id="3_r1g1k"]
 [ext_resource type="PackedScene" uid="uid://d1va6ij1npi6l" path="res://manipulator/wheel_manipulator.tscn" id="4_p5abw"]
 [ext_resource type="PackedScene" uid="uid://88035g1gf3ch" path="res://station/station.tscn" id="4_udn4d"]
 [ext_resource type="PackedScene" uid="uid://bj7od120y0hmw" path="res://manipulator/lever_manipulator.tscn" id="5_21x88"]
 [ext_resource type="PackedScene" uid="uid://bvv5bmepfu7qu" path="res://manipulator/handle_manipulator.tscn" id="6_ppms8"]
 [ext_resource type="Material" uid="uid://dtcl8npwkjoij" path="res://station/materials/cannon.tres" id="7_b6oym"]
-
-[sub_resource type="Curve3D" id="Curve3D_m6nbx"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.3, 0, 0, -1, 0, 0, 1, 0, 0, 0, 0.5, 0, 0, 0, 0, 0, 0, 0, 0.3, 0, 0),
-"tilts": PackedFloat32Array(0, 0, 0)
-}
-point_count = 3
-
-[sub_resource type="Curve3D" id="Curve3D_fw7v6"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0.5, 0, 0.5, 0, 0, 0, 0, 0, 0.2, 0, 0, 0, 0, 0, -0.5, 0, 0, -0.2, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.5, 0),
-"tilts": PackedFloat32Array(0, 0, 0, 0)
-}
-point_count = 4
-
-[sub_resource type="Curve3D" id="Curve3D_3cm72"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.2, 0, 0, 0, 0, 0, 0, 0, 0, 0.2, 0, 0),
-"tilts": PackedFloat32Array(0, 0)
-}
-point_count = 2
-
-[sub_resource type="Curve3D" id="Curve3D_qknk0"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0.3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-"tilts": PackedFloat32Array(0, 0)
-}
-point_count = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n1hbr"]
 
@@ -503,29 +474,6 @@ pitch_min = -45.0
 pitch_max = -5.0
 barrel = NodePath("station/Barrels")
 
-[node name="ControllPanel" type="Node3D" parent="."]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.5, 1, -0.5)
-visible = false
-
-[node name="Yaw" parent="ControllPanel" instance=ExtResource("3_r1g1k")]
-transform = Transform3D(0.364877, 0, -0.931056, 0, 1, 0, 0.931056, 0, 0.364877, 0.5, 0, 0.5)
-curve = SubResource("Curve3D_m6nbx")
-reset_progress = 0.5
-
-[node name="Pitch" parent="ControllPanel" instance=ExtResource("3_r1g1k")]
-transform = Transform3D(0.2706, 0, 0.962692, 0, 1, 0, -0.962692, 0, 0.2706, -0.6, 0, 0.5)
-curve = SubResource("Curve3D_fw7v6")
-
-[node name="Load" parent="ControllPanel" instance=ExtResource("3_r1g1k")]
-curve = SubResource("Curve3D_3cm72")
-reset_speed = 0.5
-reset_progress = 0.5
-
-[node name="Fire" parent="ControllPanel" instance=ExtResource("3_r1g1k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-curve = SubResource("Curve3D_qknk0")
-reset_speed = 1.0
-
 [node name="station" parent="." instance=ExtResource("4_udn4d")]
 
 [node name="DisplayLargeButtonLeft" parent="station/SteeringConsole" index="0"]
@@ -645,10 +593,6 @@ mesh = SubResource("ArrayMesh_6sq5i")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("7_b6oym")
 
-[connection signal="progress_change" from="ControllPanel/Yaw" to="." method="yaw"]
-[connection signal="progress_change" from="ControllPanel/Pitch" to="." method="pitch"]
-[connection signal="progress_change" from="ControllPanel/Load" to="." method="_on_load_progress_change"]
-[connection signal="progress_change" from="ControllPanel/Fire" to="." method="_on_fire_progress_change"]
 [connection signal="progress_change" from="station/SteeringConsole/WheelManipulator" to="." method="yaw"]
 [connection signal="progress_change" from="station/SteeringConsole/WheelManipulator2" to="." method="pitch"]
 [connection signal="progress_change" from="station/SteeringConsole/LewerManipulator" to="." method="_on_load_progress_change"]

@@ -3,7 +3,8 @@ class_name Manipulator
 
 @export var hand:Hand
 @export  var handle_visualization:Node3D 
-
+# value bellow 1 can be used to prevent looping
+@export_range(0,1) var safe_progress_change = 1.0 
 @export_subgroup("vibration borders")
 @export var vibration_start = 0.01
 @export var vibration_max = 0.05
@@ -29,7 +30,6 @@ func _ready() -> void:
 	handle.owner = self
 	handle.progress_ratio = reset_progress
 	progress_change.emit.call_deferred(reset_progress)
-	handle_rotation_test.visible = twist_ratio
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -45,9 +45,15 @@ func _process(delta: float) -> void:
 			handle.progress_ratio = reset_progress
 		return
 	var prevoius_positon = handle.global_position
+	var prevoius_ratio = handle.progress_ratio
 	
 	var offset = curve.get_closest_offset(to_local(hand.handle_position.global_position))
-	handle.progress_ratio = offset / curve.get_baked_length()
+	
+	var new_ratio = offset / curve.get_baked_length()
+	
+	if abs(new_ratio -prevoius_ratio) <= safe_progress_change: 
+		handle.progress_ratio = new_ratio
+	
 	progress_change.emit(handle.progress_ratio)
 	vibration = streach_ratio*(handle.global_position - hand.handle_position.global_position).length()
 	

@@ -48,6 +48,7 @@ shadow_mesh = SubResource("ArrayMesh_qs7a2")
 curve = SubResource("Curve3D_hm5sr")
 script = ExtResource("2_31nkf")
 handle_visualization = NodePath("Handwheel")
+safe_progress_change = 0.2
 vibration_start = 0.015
 twist_ratio = 0.0
 
@@ -60,7 +61,6 @@ visible = false
 
 [node name="RotationTest" parent="Handle" index="1"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
-visible = false
 
 [node name="Marker" parent="." index="1"]
 transform = Transform3D(-0.5, 0, -4.37113e-08, 0, 0.499999, 0, 4.37114e-08, 0, -0.499999, 0.17, 0.1, 0)

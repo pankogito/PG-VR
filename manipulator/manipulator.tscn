@@ -37,6 +37,7 @@ mesh = SubResource("BoxMesh_826xl")
 
 [node name="RotationTest" type="MeshInstance3D" parent="Handle"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0.05, 0)
+visible = false
 mesh = SubResource("BoxMesh_vkqsq")
 
 [node name="Area3D" type="Area3D" parent="Handle"]

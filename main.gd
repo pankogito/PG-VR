@@ -2,7 +2,7 @@ extends Node3D
 
 var xr_interface: XRInterface
 @export var number_of_houses = 10
-@export var generation_interval = 20
+@export var generation_interval = 30
 
 @onready var point_counter = $PointCounter
 @onready var island_p = $IslandScreen.position

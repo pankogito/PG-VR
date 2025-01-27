@@ -16,7 +16,7 @@ var tweens = {}
 
 # Inform about end of track of particul house
 signal house_finished_track(house: House)
-
+signal all_houses_left
 # Inform if package was delivered to some house
 signal delivered_package
 
@@ -33,11 +33,15 @@ func add_points_to_curve(idx: int, curve: Curve3D) -> void:
 func add_house(path: Path3D) -> void:
 	var path_follow = PathFollow3D.new()
 	path_follow.loop = false
-	path.add_child(path_follow)
+	
 	
 	if packed_scene:
 		var instance = packed_scene.instantiate()
 		path_follow.add_child(instance)
+		# ensures that house will not spawn on players before moving in to position next frame
+		# prevents dangeruos flickering related to that
+		path.add_child(path_follow)
+		path_follow.position = Vector3(0,-100,0)
 		# Connect the signal from the instance to a function in IslandManager
 		instance.package_arrived.connect(_on_house_signal.bind(path_follow))
 		
@@ -50,7 +54,7 @@ func add_house(path: Path3D) -> void:
 		tween.tween_property(path_follow, "progress_ratio", randf_range(minimal_progress_stop,1.0), duration)
 		tween.tween_interval(10.0)
 		tween.tween_property(path_follow, "progress_ratio", 0.0, duration/2.0)
-		tween.tween_callback(path_follow.queue_free)
+		tween.tween_callback(remove_house.bind(instance,path_follow))
 		tween.tween_callback(house_finished_track.emit.bind(instance))
 		# Store the tween in the dictionary
 		tweens[instance] = tween
@@ -64,9 +68,10 @@ func _on_house_signal(instance,path_follow):
 		
 		var new_tween = create_tween()
 		new_tween.tween_property(path_follow, "progress_ratio", 0.0,path_follow.progress_ratio * 5)
-		new_tween.tween_callback(path_follow.queue_free)
+		new_tween.tween_callback(remove_house.bind(instance,path_follow))
 		new_tween.tween_callback(house_finished_track.emit.bind(instance))
 		delivered_package.emit()
+
 
 # Function to add a new house to the track with the least children
 func generate_house() -> void:
@@ -100,7 +105,13 @@ func create_tracks() -> void:
 		path.curve = curve
 		add_points_to_curve(i, path.curve)
 		
-			
+func remove_house(house,path_follow):
+	tweens.erase(house) # do nothing if house is not a key
+	path_follow.queue_free()
+	
+	if tweens.is_empty():
+		all_houses_left.emit()
+	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	packed_scene = load(scene_path)

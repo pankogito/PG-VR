@@ -34,7 +34,3 @@ func _on_input_float_changed(name: String, value: float) -> void:
 					manipulator.set_hand(null)
 					manipulator = null
 				open = true
-
-func _process(delta: float) -> void:
-	$Label3D.text = "%6.3f" % (1/delta) 
-	pass

@@ -29,12 +29,12 @@ shape = SubResource("CylinderShape3D_63p5n")
 
 [node name="RotationTest" type="MeshInstance3D" parent="HandRig/GrabArea"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0.1, 0)
+visible = false
 mesh = SubResource("BoxMesh_hd2g5")
 
 [node name="HandlePosition" type="MeshInstance3D" parent="HandRig/GrabArea"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+visible = false
 mesh = SubResource("BoxMesh_hd2g5")
-
-[node name="Label3D" type="Label3D" parent="."]
 
 [connection signal="input_float_changed" from="." to="." method="_on_input_float_changed"]

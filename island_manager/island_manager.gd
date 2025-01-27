@@ -49,7 +49,7 @@ func add_house(path: Path3D) -> void:
 		var tween = create_tween()
 		tween.tween_property(path_follow, "progress_ratio", randf_range(minimal_progress_stop,1.0), duration)
 		tween.tween_interval(10.0)
-		tween.tween_property(path_follow, "progress_ratio", 0.0, duration)
+		tween.tween_property(path_follow, "progress_ratio", 0.0, duration/2.0)
 		tween.tween_callback(path_follow.queue_free)
 		tween.tween_callback(house_finished_track.emit.bind(instance))
 		# Store the tween in the dictionary
@@ -106,6 +106,11 @@ func _ready() -> void:
 	packed_scene = load(scene_path)
 	create_tracks()
 
+func reset():
+	for instance in tweens:
+		tweens[instance].kill()
+		instance.queue_free()
+	tweens = {}
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

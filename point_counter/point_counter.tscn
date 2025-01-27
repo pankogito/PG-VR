@@ -3,4 +3,5 @@
 [ext_resource type="Script" path="res://point_counter/point_counter.gd" id="1_l5kgh"]
 
 [node name="PointCounter" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0.00283223)
 script = ExtResource("1_l5kgh")

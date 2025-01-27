@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bogm8c0tdvk4x" path="res://manipulator/manipulator.tscn" id="1_ajjr5"]
 [ext_resource type="Material" uid="uid://bdd5e616aj3c1" path="res://station/materials/powerlever.tres" id="2_elksl"]
-[ext_resource type="Material" path="res://station/materials/leverridge.tres" id="3_23pxl"]
+[ext_resource type="Material" uid="uid://bt8tysbpqm6fw" path="res://station/materials/leverridge.tres" id="3_23pxl"]
 
 [sub_resource type="Curve3D" id="Curve3D_flnrg"]
 _data = {
@@ -118,6 +118,9 @@ transform = Transform3D(-4.37114e-08, 0, -0.999969, -1, -0.000203647, 4.371e-08,
 [node name="MeshInstance3D" parent="Handle" index="0"]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 3.82137e-15, 4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0.15, 0, 0)
 mesh = SubResource("ArrayMesh_lqtbp")
+
+[node name="RotationTest" parent="Handle" index="1"]
+visible = false
 
 [node name="Area3D" parent="Handle" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

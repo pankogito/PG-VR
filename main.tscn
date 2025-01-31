@@ -62,7 +62,7 @@ sky_curve = 0.0416089
 sky_cover = SubResource("NoiseTexture2D_lhyw8")
 sky_cover_modulate = Color(1, 0.98, 0.98, 1)
 ground_bottom_color = Color(0.0021, 0.08526, 0.21, 1)
-ground_horizon_color = Color(0.6399, 0.697438, 0.79, 1)
+ground_horizon_color = Color(0.474, 0.595133, 0.79, 1)
 ground_curve = 0.00965934
 
 [sub_resource type="Sky" id="Sky_wygok"]

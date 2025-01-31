@@ -39,7 +39,7 @@ func game():
 		if reset:
 			return
 	
-	await $IslandManager.house_finished_track or reset_game
+	await $IslandManager.all_houses_left or reset_game
 	if reset:
 		return
 	

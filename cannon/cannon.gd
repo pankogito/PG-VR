@@ -14,6 +14,7 @@ class_name Cannon
 var initial_velocity:float = 10
 
 var adding_package = false
+var shooting_package = false
 var package = null
 var tween:Tween = null
 @onready var final_marker = %FinalMarker
@@ -38,6 +39,7 @@ func add_package(p):
 # fire package. Requeires package != null
 func fire():
 	# create tween animation
+	shooting_package = true
 	var tween = create_tween()
 	var t = 2*4/initial_velocity
 	package.shot_particles(true)
@@ -55,6 +57,7 @@ func fire():
 	package.linear_velocity = initial_velocity*v.normalized()
 	package.freeze = false
 	package = null
+	shooting_package = false
 
 # set yaw to given ratio between limits
 func yaw(ratio):
@@ -66,7 +69,7 @@ func pitch(ratio):
 
 # if loaded and progress above 90% fire
 func _on_fire_progress_change(progress: Variant) -> void:
-	if progress > 0.9 and package:
+	if progress > 0.9 and package and not shooting_package:
 		fire()
 
 # if not loaded and progress above 90% create and load package
